@@ -1,0 +1,63 @@
+include ./mixins.pug
+
+<!DOCTYPE html>
+html(lang="ru")
+  head
+    meta(charset="UTF-8")
+    meta(name="viewport", content="width=device-width, initial-scale=1.0")
+    meta(http-equiv="X-UA-Compatible", content="ie=edge")
+    title Portfolio | main page
+  body
+    .wrapper
+      .maincontent
+        section.first-screen
+          .container.container__first-screen
+
+            header.header
+
+              .logo DM
+
+              nav.menu
+
+                ul.menu__list
+                  li.menu__item 
+                    a.menu__item-link(href="#") Главная
+                  li.menu__item 
+                    a.menu__item-link(href="#") Обо мне
+                  li.menu__item 
+                    a.menu__item-link(href="#") Навыки
+                  li.menu__item
+                    a.menu__item-link(href="#") Работы
+                  li.menu__item
+                    a.menu__item-link(href="#") Отзывы
+                  li.menu__item
+                    a.menu__item-link(href="#") Связаться
+
+              .socials
+                ul.socials__list
+                  li.socials__item
+                    a.socials__item-link(href="#")
+                     +icon('insta', 'social-icon')
+                  li.socials__item
+                    a.socials__item-link(href="#")
+                     +icon('vk', 'social-icon')
+                  li.socials__item
+                    a.socials__item-link(href="#")
+                     +icon('github', 'social-icon')
+            
+
+            .first-screen__content
+
+              h3.subtitle.subtitle__first-screen Личный сайт веб разработчика
+              h1.title.title__first-screen Дарья Марченко
+
+
+
+            .scroll
+              a(href="#").scroll__link
+                span.scroll__text Скролл
+                +icon("scroll", "scroll__icon")
+        
+        section.about-me
+          container.container__about-me
+            
