@@ -87,4 +87,32 @@
     color: #fff;
     font-weight: 700;
     border-radius: 25px 2px 25px 2px;
+
+    &:hover {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:active {
+    background-image: none;
+    background-color: #ad00ed;
+    }
+}
+
+
+input:focus,
+textarea:focus {
+    color: #5500f2;
+}
+
+
+::placeholder {
+    opacity: .5;
+}
+
+::active {
+
+    .form-icon {
+        fill: #5500f2;
+    }
 }

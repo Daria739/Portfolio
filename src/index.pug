@@ -11,7 +11,7 @@ html(lang="ru")
     .wrapper
       .maincontent
         .welcome-section
-          section.hero
+          section(id="hero-sec").hero
             .container.hero__container
               header.header
                 .logo DM
@@ -19,21 +19,29 @@ html(lang="ru")
                 .header__menu
                   nav.nav
                     ul.nav__list
-                      - var menu = ['Главная', 'Обо мне', 'Навыки' , 'Работы' , 'Отзывы', 'Связаться'];
-                      each item in menu
-                        li.nav__item
-                          a(href="").nav__link #{item}
+                      li.nav__item
+                        a(href="#hero-sec").nav__link Главная
+                      li.nav__item
+                        a(href="#about-sec").nav__link Обо мне
+                      li.nav__item
+                        a(href="#values-sec").nav__link Навыки
+                      li.nav__item
+                        a(href="#works-sec").nav__link Работы
+                      li.nav__item
+                        a(href="#reviews-sec").nav__link Отзывы
+                      li.nav__item
+                        a(href="#form-sec").nav__link Связаться
 
                 .header__links
                   ul.socials
                     li.socials__item
-                      a.socials__item-link(href="#")
+                      a.socials__item-link(href="https://www.instagram.com/daria739" target="_blank")
                         +icon('insta', 'social-icon')
                     li.socials__item
-                      a.socials__item-link(href="#")
+                      a.socials__item-link(href="https://vk.com/dm72690571" target="_blank")
                         +icon('vk', 'social-icon')
                     li.socials__item
-                      a.socials__item-link(href="#")
+                      a.socials__item-link(href="https://github.com/Daria739" target="_blank")
                         +icon('github', 'social-icon')
               
               .hero__content
@@ -45,7 +53,7 @@ html(lang="ru")
                 button(type="button").scroll-down-button 
                   span.scroll-down-button Скролл
 
-          section.about
+          section(id="about-sec").about
             .container.about__container
               .about__left
                 .user
@@ -84,7 +92,7 @@ html(lang="ru")
               points="0,100 1000,100 1000,0"
             )
 
-        section.values 
+        section(id="values-sec").values 
           .container.values__container
             .values__left
               .values__image
@@ -114,7 +122,7 @@ html(lang="ru")
                                 stop(offset="100%" stop-color="#8f00ef")
                             .skill__title #{skill}
 
-        section.works 
+        section(id="works-sec").works 
           .container.works__container
             .works__left
               h2.works__title Мои работы
@@ -152,7 +160,7 @@ html(lang="ru")
                 p.works__desc-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 .works__link
                   +icon('link', 'link-icon')
-                  a.works__link-content(href="#") Посмотреть сайт
+                  a.works__link-content(href="#" target="_blank") Посмотреть сайт
        
         .triangles.triangles-bottom
             svg.triangles__item.triangles-bottom__item.trianles__item_left(viewBox="0 0 1000 100" preserveAspectRatio="none")
@@ -165,7 +173,7 @@ html(lang="ru")
               )
 
         .bottom-section
-          section.reviews
+          section(id="reviews-sec").reviews
             .container.reviews__container
               .reviews__top-row
                 h2.reviews__title Что обо мне говорят
@@ -202,7 +210,7 @@ html(lang="ru")
                         .reviews__slider-user-name Владимир Сабанцев
                         .reviews__slider-user-occ Преподаватель
 
-          section.form
+          section(id="form-sec").form
             .container
               h2.form__title Связаться со мной
               form(action="POST").form__content
@@ -212,13 +220,13 @@ html(lang="ru")
                     span.form__block-title.form__block-title_user Введите ваше имя
                     .form__block-container
                       +icon('user', 'form-icon')
-                      input(type="text" placeholder="Дмитрий Ковальчук").form__input
+                      input(type="text" placeholder="Дмитрий Ковальчук" required).form__input
 
                   label.form__block
                     span.form__block-title Введите ваш email
                     .form__block-container
                       +icon('envelope', 'form-icon')
-                      input(type="text" placeholder="loftschool@study.ru").form__input
+                      input(type="text" placeholder="loftschool@study.ru" required).form__input
 
                 .form__row
 
@@ -229,4 +237,49 @@ html(lang="ru")
                       textarea(placeholder="Требуется ваша помощь в создании сайта. Интересует срок и цена вопроса").form__input_textarea
                 
                 button(type="submit").form__btn Отправить
-                    
+        
+
+        footer.footer
+          .container.footer__container
+
+            .footer__copyright
+
+              .copyright
+                .copyright__year ©2019
+                .copyright__info
+                  .copyright__username Марченко Дарья
+                  .copyright__desc Личный сайт веб-разработчика
+
+            .footer__data
+              .footer__menu
+                ul.footer__menu-list
+                  li.footer__menu-item
+                    a(href="#hero-sec").footer__menu-link Главная
+                  li.footer__menu-item
+                    a(href="#about-sec").footer__menu-link Обо мне
+                  li.footer__menu-item
+                    a(href="#values-sec").footer__menu-link Навыки
+                  li.footer__menu-item
+                    a(href="#works-sec").footer__menu-link Работы
+                  li.footer__menu-item
+                    a(href="#reviews-sec").footer__menu-link Отзывы
+                  li.footer__menu-item
+                    a(href="#form-sec").footer__menu-link Связаться
+              .footer__data-columns
+                .footer__data-col
+                  p.footer__text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool
+                  ul.footer__socials-list.socials
+                    li.socials__item.socials__item_rounded
+                      a.socials__item-link.socials__item-link_footer(href="https://www.instagram.com/daria739")
+                        +icon('insta', 'social-icon')
+                    li.socials__item.socials__item_rounded
+                      a.socials__item-link.socials__item-link_footer(href="https://vk.com/dm72690571" target="_blank")
+                        +icon('vk', 'social-icon')
+                    li.socials__item.socials__item_rounded
+                      a.socials__item-link.socials__item-link_footer(href="https://github.com/Daria739" target="_blank")
+                        +icon('github', 'social-icon')
+
+
+                .footer__data-col
+                  quote.footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете
+                  cite.footer__cite Martin Golding
