@@ -10,54 +10,106 @@ html(lang="ru")
   body
     .wrapper
       .maincontent
-        section.first-screen
-          .container.container__first-screen
+        .welcome-section
+          section.hero
+            .container.hero__container
+              header.header
+                .logo DM
+                
+                .header__menu
+                  nav.nav
+                    ul.nav__list
+                      - var menu = ['Главная', 'Обо мне', 'Навыки' , 'Работы' , 'Отзывы', 'Связаться'];
+                      each item in menu
+                        li.nav__item
+                          a(href="").nav__link #{item}
 
-            header.header
+                .header__links
+                  ul.socials
+                    li.socials__item
+                      a.socials__item-link(href="#")
+                        +icon('insta', 'social-icon')
+                    li.socials__item
+                      a.socials__item-link(href="#")
+                        +icon('vk', 'social-icon')
+                    li.socials__item
+                      a.socials__item-link(href="#")
+                        +icon('github', 'social-icon')
+              
+              .hero__content
+                .user-info
+                  h2.user-info__desc Личный сайт веб разработчика
+                  h1.user-info__name Дарья Марченко
+              
+              .hero__bottom-buttons
+                button(type="button").scroll-down-button 
+                  span.scroll-down-button Скролл
 
-              .logo DM
-
-              nav.menu
-
-                ul.menu__list
-                  li.menu__item 
-                    a.menu__item-link(href="#") Главная
-                  li.menu__item 
-                    a.menu__item-link(href="#") Обо мне
-                  li.menu__item 
-                    a.menu__item-link(href="#") Навыки
-                  li.menu__item
-                    a.menu__item-link(href="#") Работы
-                  li.menu__item
-                    a.menu__item-link(href="#") Отзывы
-                  li.menu__item
-                    a.menu__item-link(href="#") Связаться
-
-              .socials
-                ul.socials__list
-                  li.socials__item
-                    a.socials__item-link(href="#")
-                     +icon('insta', 'social-icon')
-                  li.socials__item
-                    a.socials__item-link(href="#")
-                     +icon('vk', 'social-icon')
-                  li.socials__item
-                    a.socials__item-link(href="#")
-                     +icon('github', 'social-icon')
-            
-
-            .first-screen__content
-
-              h3.subtitle.subtitle__first-screen Личный сайт веб разработчика
-              h1.title.title__first-screen Дарья Марченко
+          section.about
+            .container.about__container
+              .about__left
+                .user
+                  .user__avatar
+                    img(src=require('images/content/uMmrjh-M3HA.jpg') alt="myPhoto" class='user-pic')
+                  
+                  .user__data
+                    table.user__data-table
+                      - 
+                        var data = [
+                          ['Проживаю', 'Санкт-Петербург'],
+                          ['Возраст', '24 года'],
+                          ['Родилась', '28 апреля 1995'],
+                        ]
+                      each row in data
+                        tr.user__data-row
+                          td.user__data-cell.user__data-cell_one #{row[0]}
+                          td.user__data-cell.user__data-cell_two #{row[1]}
 
 
+              .about__right
+                span.about__welcome Привет!
+                h2.about__username Дарья Марченко
 
-            .scroll
-              a(href="#").scroll__link
-                span.scroll__text Скролл
-                +icon("scroll", "scroll__icon")
-        
-        section.about-me
-          container.container__about-me
-            
+                .about__desc
+                  p.about__desc-info Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  p.about__desc-ps Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите как тут всё классно и красиво!
+
+        .triangles
+          svg.triangles__item.trianles__item--left(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(
+              points="0,0 0,100 1000,100"
+            )
+          svg.triangles__item.triangles__item--right(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(
+              points="0,100 1000,100 1000,0"
+            )
+
+        section.values 
+          .container.values__container
+            .values__left
+              .values__image
+                img(src=require('images/content/bag.png') alt="bag" class='bag-pic')
+            .values__right
+              h2.values__title Чем я могу быть вам полезна
+              .values__desc
+                p.values__desc-text Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              ul.user-skills
+                - 
+                  var skills = [
+                    ['Frontend', ['HTML5', 'CSS3', 'JavaScript', 'Jquery и Vue.js']],
+                    ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
+                  ]
+                each item in skills
+                  li.skills__item.skills-row
+                    h3.skills-row__title #{item[0]}
+                    ul.skills-row__list
+                      each skill in item[1]
+                        li.skills-row__item
+                          .skill
+                            svg(viewBox="0 0 100 100").skill__circle-shape
+                              circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                              circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform='rotate(180 50 50').skill__circle.skill__circle_above
+                              linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                                stop(offset="0" stop-color="#5500f2")
+                                stop(offset="100%" stop-color="#8f00ef")
+                            .skill__title #{skill}
