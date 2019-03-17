@@ -201,3 +201,32 @@ html(lang="ru")
                       .reviews__slider-user-info
                         .reviews__slider-user-name Владимир Сабанцев
                         .reviews__slider-user-occ Преподаватель
+
+          section.form
+            .container
+              h2.form__title Связаться со мной
+              form(action="POST").form__content
+                .form__row
+
+                  label.form__block
+                    span.form__block-title.form__block-title_user Введите ваше имя
+                    .form__block-container
+                      +icon('user', 'form-icon')
+                      input(type="text" placeholder="Дмитрий Ковальчук").form__input
+
+                  label.form__block
+                    span.form__block-title Введите ваш email
+                    .form__block-container
+                      +icon('envelope', 'form-icon')
+                      input(type="text" placeholder="loftschool@study.ru").form__input
+
+                .form__row
+
+                  label.form__block
+                    span.form__block-title.form__block-title_textarea Сообщение к письму
+                    .form__block-container.form__block-container_textarea
+                      +icon('message', 'form-icon')
+                      textarea(placeholder="Требуется ваша помощь в создании сайта. Интересует срок и цена вопроса").form__input_textarea
+                
+                button(type="submit").form__btn Отправить
+                    
