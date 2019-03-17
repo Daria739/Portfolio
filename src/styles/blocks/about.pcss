@@ -1,24 +1,22 @@
 .about {
-    height: 100vh;
-    min-height: 650px;
+min-height: 650px;
+padding-top: 171px;
+padding-bottom: 150px;
+width: 100%;
 }
 
 .about__container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+display: flex;
+align-items: center;
+justify-content: center;
 }
 
-.about__left {
-    width: 45%;
+
+.about__right {
+    margin-left: 10%;
 }
 
-.about__right: {
-    width: 40%;
-    
-    max-width: 540px;
 
-}
 
 .about__welcome {
     font-weight: 600;
@@ -37,12 +35,25 @@
 .about__desc {
     font-weight: 600;
     color: rgba(65, 76, 99, .5);
+    max-width: 540px;
 }
 
 .about__desc-info {
-    margin-bottom: 3%;
+    margin-bottom: 15%;
 }
 
 .about__desc-ps {
     font-style: italic;
+    display: flex;
+    position: relative;
+
+    &:before {
+        content: "*";
+        font-size: 48px;
+        color: rgba(250,0,0,.1);
+        margin-right: 50px;
+        position: absolute;
+        top: -14px;
+        left: -42px;
+    }
 }

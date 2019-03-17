@@ -67,7 +67,7 @@ html(lang="ru")
 
 
               .about__right
-                span.about__welcome Привет!
+                span.about__welcome Привет, меня зовут
                 h2.about__username Дарья Марченко
 
                 .about__desc
@@ -90,8 +90,8 @@ html(lang="ru")
               .values__image
                 img(src=require('images/content/bag.png') alt="bag" class='bag-pic')
             .values__right
-              h2.values__title Чем я могу быть вам полезна
               .values__desc
+              h2.values__title Чем я могу быть вам полезна
                 p.values__desc-text Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               ul.user-skills
                 - 
@@ -113,3 +113,91 @@ html(lang="ru")
                                 stop(offset="0" stop-color="#5500f2")
                                 stop(offset="100%" stop-color="#8f00ef")
                             .skill__title #{skill}
+
+        section.works 
+          .container.works__container
+            .works__left
+              h2.works__title Мои работы
+              .slider
+                img(src=require('images/content/slider.jpg') alt="slider" class='slider-pic')
+                ul.slider__list
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1.slider__item-btn_active
+                      img(src=require('images/content/mini-1.jpg') alt="preview-1" class='slider__item-preview')
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1
+                      img(src=require('images/content/mini-2.jpg') alt="preview-2" class='slider__item-preview')
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1
+                      img(src=require('images/content/mini-3.jpg') alt="preview-3" class='slider__item-preview')
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1
+                      img(src=require('images/content/mini-4.jpg') alt="preview-4" class='slider__item-preview')
+                .slider__controlls
+                  button(type="button").slider__controlls-left
+                    +icon('arrow-down', 'arrow-left')
+
+                  button(type="button").slider__controlls-right
+                    +icon('arrow-down', 'arrow-right')
+
+
+            .works__right
+              ul.works__desc-list
+                li.works__desc-item HTML
+                li.works__desc-item CSS
+                li.works__desc-item JavaScript
+              
+              .works__desc
+                h3.works__desc-title Сайт школы образования
+                p.works__desc-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .works__link
+                  +icon('link', 'link-icon')
+                  a.works__link-content(href="#") Посмотреть сайт
+       
+        .triangles.triangles-bottom
+            svg.triangles__item.triangles-bottom__item.trianles__item_left(viewBox="0 0 1000 100" preserveAspectRatio="none")
+              polygon(
+                points="0,0 0,100 1000,100"
+              )
+            svg.triangles__item.triangles-bottom__item.triangles__item_right(viewBox="0 0 1000 100" preserveAspectRatio="none")
+              polygon(
+                points="0,100 1000,100 1000,0"
+              )
+
+        .bottom-section
+          section.reviews
+            .container.reviews__container
+              .reviews__top-row
+                h2.reviews__title Что обо мне говорят
+                .reviews__slider-controlls
+                  button.reviews__slider-controll-left
+                    +icon('arrow-down', 'arrow-reviews-left')
+                  button.reviews__slider-controll-right
+                    +icon('arrow-down', 'arrow-reviews-right')
+                
+
+              .reviews__content
+                ul.reviews__slider-list
+                  li.reviews__slider-item
+                    .reviews__slider-quote
+                      .reviews__slider-quote-pic
+                        +icon('quote', 'quote-icon')
+                      quote.reviews__slider-quote Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    cite.reviews__slider-quote-author
+                      .reviews__slider-user-pic
+                        img(src=require('images/content/Dmitry.jpg') alt="Dmitry Kovalchuk" class='user-pic_reviews')
+                      .reviews__slider-user-info
+                        .reviews__slider-user-name Дмитрий Ковальчук
+                        .reviews__slider-user-occ Основатель LoftSchool
+
+                  li.reviews__slider-item
+                    .reviews__slider-quote
+                      .reviews__slider-quote-pic
+                        +icon('quote', 'quote-icon')
+                      quote.reviews__slider-quote Этот код выдержит любые испытания. Только, пожалуйста, не загружайте его на слишком старых браузерах.
+                    cite.reviews__slider-quote-author
+                      .reviews__slider-user-pic
+                        img(src=require('images/content/Vladimir.jpg') alt="Vladimir Sabantsev" class='user-pic_reviews')
+                      .reviews__slider-user-info
+                        .reviews__slider-user-name Владимир Сабанцев
+                        .reviews__slider-user-occ Преподаватель
