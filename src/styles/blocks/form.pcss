@@ -1,8 +1,3 @@
-.form {
-    padding-bottom: 15%;
-    width: 70%;
-}
-
 .form__title {
     font-weight: 700;
     font-size: 36px;
@@ -11,7 +6,6 @@
 
 .form__row {
     display: flex;
-
     margin-bottom: 5%;
 }
 
@@ -22,8 +16,9 @@
     flex: 1;
     margin-right: 50px;
 
-}
+    transition-duration: .2s;
 
+}
 
 
 .form__block-title {
@@ -44,9 +39,21 @@
     border: none;
     background: transparent;
     padding: 17px 10px;
-
     font-size: 18px;
     font-weight: 700;
+    cursor: pointer;
+
+    &:hover {
+    color: #5500f2;
+    }
+
+    &:active {
+    color:  #ae00ff;
+    }
+
+    &:focus {
+    color: #414c63;
+    }
 
 }
 
@@ -57,6 +64,7 @@
     padding-top: 0;
     margin-top: -2%;
     overflow: hidden;
+    resize: vertical;
 }
 
 .form-icon {
@@ -95,24 +103,35 @@
 
     &:active {
     background-image: none;
-    background-color: #ad00ed;
+    background-color: #5500f2;
+    }
+
+    &:focus {
+    background-image: none;
+    background-color: #414c63;
     }
 }
 
-
-input:focus,
-textarea:focus {
-    color: #5500f2;
-}
-
-
 ::placeholder {
-    opacity: .5;
+    color: #ccc;
 }
 
-::active {
-
-    .form-icon {
+.form__block:hover {
+    .form-icon{
         fill: #5500f2;
+        opacity: 1;
+    }
+}
+
+.form__block:active {
+    .form-icon{
+        fill: #ae00ff;
+        opacity: 1;
+    }
+}
+
+.form__block:focus {
+    .form-icon{
+        opacity: 1;
     }
 }

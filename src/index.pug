@@ -14,7 +14,7 @@ html(lang="ru")
           section(id="hero-sec").hero
             .container.hero__container
               header.header
-                .logo DM
+                span.logo DM
                 
                 .header__menu
                   nav.nav
@@ -45,20 +45,20 @@ html(lang="ru")
                         +icon('github', 'social-icon')
               
               .hero__content
-                .user-info
-                  h2.user-info__desc Личный сайт веб разработчика
-                  h1.user-info__name Дарья Марченко
+                h1.user-info
+                  span.user-info__desc Личный сайт веб разработчика
+                  span.user-info__name Дарья Марченко
               
               .hero__bottom-buttons
                 button(type="button").scroll-down-button 
-                  span.scroll-down-button Скролл
+                  span.scroll-down-button__text Скролл
 
           section(id="about-sec").about
             .container.about__container
               .about__left
                 .user
                   .user__avatar
-                    img(src=require('images/content/uMmrjh-M3HA.jpg') alt="myPhoto" class='user-pic')
+                    +image('content/uMmrjh-M3HA.jpg', 'user-pic', 'myPhoto')
                   
                   .user__data
                     table.user__data-table
@@ -96,11 +96,10 @@ html(lang="ru")
           .container.values__container
             .values__left
               .values__image
-                img(src=require('images/content/bag.png') alt="bag" class='bag-pic')
+                +image('content/bag.png', 'bag-pic', 'bag')
             .values__right
-              .values__desc
               h2.values__title Чем я могу быть вам полезна
-                p.values__desc-text Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              p.values__desc-text Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
               ul.user-skills
                 - 
                   var skills = [
@@ -108,11 +107,11 @@ html(lang="ru")
                     ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
                   ]
                 each item in skills
-                  li.skills__item.skills-row
-                    h3.skills-row__title #{item[0]}
-                    ul.skills-row__list
+                  li.user-skills__item.user-skills-row
+                    h3.user-skills-row__title #{item[0]}
+                    ul.user-skills-row__list
                       each skill in item[1]
-                        li.skills-row__item
+                        li.user-skills-row__item
                           .skill
                             svg(viewBox="0 0 100 100").skill__circle-shape
                               circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
@@ -127,20 +126,20 @@ html(lang="ru")
             .works__left
               h2.works__title Мои работы
               .slider
-                img(src=require('images/content/slider.jpg') alt="slider" class='slider-pic')
+                +image('content/slider.jpg', 'slider-pic', 'slider')
                 ul.slider__list
                   li.slider__item
                     button(type="button").slider__item-btn.slider__item-btn-1.slider__item-btn_active
-                      img(src=require('images/content/mini-1.jpg') alt="preview-1" class='slider__item-preview')
+                      +image('content/mini-1.jpg', 'slider__item-preview', 'Slider Preview-1')
                   li.slider__item
                     button(type="button").slider__item-btn.slider__item-btn-1
-                      img(src=require('images/content/mini-2.jpg') alt="preview-2" class='slider__item-preview')
+                      +image('content/mini-2.jpg', 'slider__item-preview', 'Slider Preview-2')
                   li.slider__item
                     button(type="button").slider__item-btn.slider__item-btn-1
-                      img(src=require('images/content/mini-3.jpg') alt="preview-3" class='slider__item-preview')
+                      +image('content/mini-3.jpg', 'slider__item-preview', 'Slider Preview-3')
                   li.slider__item
                     button(type="button").slider__item-btn.slider__item-btn-1
-                      img(src=require('images/content/mini-4.jpg') alt="preview-4" class='slider__item-preview')
+                      +image('content/mini-4.jpg', 'slider__item-preview', 'Slider Preview-4')
                 .slider__controlls
                   button(type="button").slider__controlls-left
                     +icon('arrow-down', 'arrow-left')
@@ -159,7 +158,7 @@ html(lang="ru")
                 h3.works__desc-title Сайт школы образования
                 p.works__desc-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
                 .works__link
-                  +icon('link', 'link-icon')
+                  +icon('link', 'link-icon works__link-icon')
                   a.works__link-content(href="#" target="_blank") Посмотреть сайт
        
         .triangles.triangles-bottom
@@ -188,29 +187,25 @@ html(lang="ru")
                 ul.reviews__slider-list
                   li.reviews__slider-item
                     .reviews__slider-quote
-                      .reviews__slider-quote-pic
-                        +icon('quote', 'quote-icon')
-                      quote.reviews__slider-quote Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                      quote.reviews__slider-quote-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
                     cite.reviews__slider-quote-author
                       .reviews__slider-user-pic
-                        img(src=require('images/content/Dmitry.jpg') alt="Dmitry Kovalchuk" class='user-pic_reviews')
+                        +image('content/Dmitry.jpg', 'user-pic_reviews', 'Dmitry Kovalchuk')
                       .reviews__slider-user-info
-                        .reviews__slider-user-name Дмитрий Ковальчук
-                        .reviews__slider-user-occ Основатель LoftSchool
+                        span.reviews__slider-user-name Дмитрий Ковальчук
+                        span.reviews__slider-user-occ Основатель LoftSchool
 
                   li.reviews__slider-item
                     .reviews__slider-quote
-                      .reviews__slider-quote-pic
-                        +icon('quote', 'quote-icon')
-                      quote.reviews__slider-quote Этот код выдержит любые испытания. Только, пожалуйста, не загружайте его на слишком старых браузерах.
+                      quote.reviews__slider-quote-text Этот код выдержит любые испытания. Только, пожалуйста, не загружайте его на слишком старых браузерах.
                     cite.reviews__slider-quote-author
                       .reviews__slider-user-pic
-                        img(src=require('images/content/Vladimir.jpg') alt="Vladimir Sabantsev" class='user-pic_reviews')
+                        +image('content/Vladimir.jpg', 'user-pic_reviews', 'Vladimir Sabantsev')
                       .reviews__slider-user-info
-                        .reviews__slider-user-name Владимир Сабанцев
-                        .reviews__slider-user-occ Преподаватель
+                        span.reviews__slider-user-name Владимир Сабанцев
+                        span.reviews__slider-user-occ Преподаватель
 
-          section(id="form-sec").form
+          section(id="form-sec").form.bottom-section__form
             .container
               h2.form__title Связаться со мной
               form(action="POST").form__content
@@ -245,10 +240,10 @@ html(lang="ru")
             .footer__copyright
 
               .copyright
-                .copyright__year ©2019
+                span.copyright__year ©2019
                 .copyright__info
-                  .copyright__username Марченко Дарья
-                  .copyright__desc Личный сайт веб-разработчика
+                  span.copyright__username Марченко Дарья
+                  span.copyright__desc Личный сайт веб-разработчика
 
             .footer__data
               .footer__menu

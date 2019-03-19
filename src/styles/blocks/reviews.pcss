@@ -29,8 +29,24 @@
         .arrow-reviews-right {
             fill: #6c23f4;
         }
-
     }
+
+    &:active {
+    border: 1px solid #ae00ff;
+        .arrow-reviews-left, 
+        .arrow-reviews-right {
+            fill: #ae00ff;
+        }
+    }
+
+    &:focus {
+    border: 1px solid #ae00ff;
+        .arrow-reviews-left, 
+        .arrow-reviews-right {
+            fill: #ae00ff;
+        }
+    }
+
 }
 
 .reviews__slider-controll-left {
@@ -71,6 +87,21 @@
 }
 
 .reviews__slider-quote {
+    display: flex;
+}
+
+.reviews__slider-quote:before {
+    content: "";
+    display: block;
+    background: svg-load('quote.svg', fill=$text-color, width=100%, height=100%) no-repeat;
+    opacity: .1;
+    width: 85px;
+    height: 85px;
+    margin-right: 2%;
+
+}
+
+.reviews__slider-quote-text {
     font-weight: 600;
     color: rgba(65,76,99,.5);
     line-height: 2rem;
