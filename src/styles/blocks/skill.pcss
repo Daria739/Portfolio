@@ -1,0 +1,43 @@
+.skill {
+    width: 200px;
+    height: 200px;
+    fill: transparent;
+    stroke: #ccc;
+    stroke-width: 3px;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+.skill__circle-shape {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    transform: rotate(90deg);
+    fill: transparent;
+    stroke: #ccc;
+    stroke-width: 5px;
+    position: relative;
+}
+
+.skill__title {
+    font-size: 15px;
+    position: absolute;
+}
+
+.skill__circle_above {
+    stroke-dasharray: 150;
+    stroke-dashoffset: 150;
+    stroke-width:8px;
+    animation: fill 100s linear infinite;
+    animation-play-state: paused;
+    animation-delay: -.3s;
+}
+
+.skill__circle_above[style="animation-delay: -100s"] {
+    animation: initial;
+    stroke-dashoffset: 0;
+}

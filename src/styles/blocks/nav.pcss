@@ -1,0 +1,31 @@
+.nav__list {
+    display: flex;
+    align-items: center;
+}
+
+.nav__item {
+    margin-right: 60px;
+
+     &:last-child {
+        margin-right: 0;
+     }
+}
+
+.nav__link {
+    text-decoration: none;
+    transition-duration: .3s;
+
+    &:hover {
+    color:#5500f2;
+    font-weight: bold;
+    }
+
+    &:active {
+    color: #ae00ff;
+    }
+
+    &:focus {
+    color: #ae00ff;
+    }
+}
+
