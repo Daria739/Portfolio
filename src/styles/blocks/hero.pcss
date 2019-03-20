@@ -1,0 +1,76 @@
+.hero {
+    height: 100vh;
+    min-height: 650px;
+    padding-bottom: 3%;
+    padding-top: 3%;
+}
+
+.hero__container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+}
+
+.hero__content {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__bottom-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    padding-bottom: 2%;
+
+    &:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: svg-load('scroll.svg', fill=$text-color, width=100%, height=100%) no-repeat;
+    }
+
+    &:hover:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: svg-load('scroll.svg', fill=#5500f2, width=100%, height=100%) no-repeat;
+    }
+
+    &:focus:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: svg-load('scroll.svg', fill=#5500f2, width=100%, height=100%) no-repeat;
+    }
+
+    &:active:after {
+    content: "";
+    display: block;
+    width: 30px;
+    height: 30px;
+    background: svg-load('scroll.svg', fill=#ae00ff, width=100%, height=100%) no-repeat;
+    }
+
+}
+
+.hero__bottom-buttons:hover .scroll-down-button__text {
+    color:#5500f2;
+    font-weight: bold;
+}
+
+.hero__bottom-buttons:active .scroll-down-button__text {
+    color:#ae00ff;
+    font-weight: bold;
+}
+
+.hero__bottom-buttons:focus .scroll-down-button__text {
+    color:#5500f2;
+    font-weight: bold;
+}

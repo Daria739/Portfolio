@@ -10,54 +10,271 @@ html(lang="ru")
   body
     .wrapper
       .maincontent
-        section.first-screen
-          .container.container__first-screen
+        .welcome-section
+          section(id="hero-sec").hero
+            .container.hero__container
+              header.header
+                span.logo DM
+                
+                .header__menu
+                  nav.nav
+                    ul.nav__list
+                      li.nav__item
+                        a(href="#hero-sec").nav__link Главная
+                      li.nav__item
+                        a(href="#about-sec").nav__link Обо мне
+                      li.nav__item
+                        a(href="#values-sec").nav__link Навыки
+                      li.nav__item
+                        a(href="#works-sec").nav__link Работы
+                      li.nav__item
+                        a(href="#reviews-sec").nav__link Отзывы
+                      li.nav__item
+                        a(href="#form-sec").nav__link Связаться
 
-            header.header
+                .header__links
+                  ul.socials
+                    li.socials__item
+                      a.socials__item-link(href="https://www.instagram.com/daria739" target="_blank")
+                        +icon('insta', 'social-icon')
+                    li.socials__item
+                      a.socials__item-link(href="https://vk.com/dm72690571" target="_blank")
+                        +icon('vk', 'social-icon')
+                    li.socials__item
+                      a.socials__item-link(href="https://github.com/Daria739" target="_blank")
+                        +icon('github', 'social-icon')
+              
+              .hero__content
+                h1.user-info
+                  span.user-info__desc Личный сайт веб разработчика
+                  span.user-info__name Дарья Марченко
+              
+              .hero__bottom-buttons
+                button(type="button").scroll-down-button 
+                  span.scroll-down-button__text Скролл
 
-              .logo DM
-
-              nav.menu
-
-                ul.menu__list
-                  li.menu__item 
-                    a.menu__item-link(href="#") Главная
-                  li.menu__item 
-                    a.menu__item-link(href="#") Обо мне
-                  li.menu__item 
-                    a.menu__item-link(href="#") Навыки
-                  li.menu__item
-                    a.menu__item-link(href="#") Работы
-                  li.menu__item
-                    a.menu__item-link(href="#") Отзывы
-                  li.menu__item
-                    a.menu__item-link(href="#") Связаться
-
-              .socials
-                ul.socials__list
-                  li.socials__item
-                    a.socials__item-link(href="#")
-                     +icon('insta', 'social-icon')
-                  li.socials__item
-                    a.socials__item-link(href="#")
-                     +icon('vk', 'social-icon')
-                  li.socials__item
-                    a.socials__item-link(href="#")
-                     +icon('github', 'social-icon')
-            
-
-            .first-screen__content
-
-              h3.subtitle.subtitle__first-screen Личный сайт веб разработчика
-              h1.title.title__first-screen Дарья Марченко
+          section(id="about-sec").about
+            .container.about__container
+              .about__left
+                .user
+                  .user__avatar
+                    +image('content/uMmrjh-M3HA.jpg', 'user-pic', 'myPhoto')
+                  
+                  .user__data
+                    table.user__data-table
+                      - 
+                        var data = [
+                          ['Проживаю', 'Санкт-Петербург'],
+                          ['Возраст', '24 года'],
+                          ['Родилась', '28 апреля 1995'],
+                        ]
+                      each row in data
+                        tr.user__data-row
+                          td.user__data-cell.user__data-cell_one #{row[0]}
+                          td.user__data-cell.user__data-cell_two #{row[1]}
 
 
+              .about__right
+                span.about__welcome Привет, меня зовут
+                h2.about__username Дарья Марченко
 
-            .scroll
-              a(href="#").scroll__link
-                span.scroll__text Скролл
-                +icon("scroll", "scroll__icon")
+                .about__desc
+                  p.about__desc-info Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  p.about__desc-ps Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите как тут всё классно и красиво!
+
+        .triangles
+          svg.triangles__item.trianles__item--left(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(
+              points="0,0 0,100 1000,100"
+            )
+          svg.triangles__item.triangles__item--right(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(
+              points="0,100 1000,100 1000,0"
+            )
+
+        section(id="values-sec").values 
+          .container.values__container
+            .values__left
+              .values__image
+                +image('content/bag.png', 'bag-pic', 'bag')
+            .values__right
+              h2.values__title Чем я могу быть вам полезна
+              p.values__desc-text Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+              ul.user-skills
+                - 
+                  var skills = [
+                    ['Frontend', ['HTML5', 'CSS3', 'JavaScript', 'Jquery и Vue.js']],
+                    ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
+                  ]
+                each item in skills
+                  li.user-skills__item.user-skills-row
+                    h3.user-skills-row__title #{item[0]}
+                    ul.user-skills-row__list
+                      each skill in item[1]
+                        li.user-skills-row__item
+                          .skill
+                            svg(viewBox="0 0 100 100").skill__circle-shape
+                              circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
+                              circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform='rotate(180 50 50').skill__circle.skill__circle_above
+                              linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
+                                stop(offset="0" stop-color="#5500f2")
+                                stop(offset="100%" stop-color="#8f00ef")
+                            .skill__title #{skill}
+
+        section(id="works-sec").works 
+          .container.works__container
+            .works__left
+              h2.works__title Мои работы
+              .slider
+                +image('content/slider.jpg', 'slider-pic', 'slider')
+                ul.slider__list
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1.slider__item-btn_active
+                      +image('content/mini-1.jpg', 'slider__item-preview', 'Slider Preview-1')
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1
+                      +image('content/mini-2.jpg', 'slider__item-preview', 'Slider Preview-2')
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1
+                      +image('content/mini-3.jpg', 'slider__item-preview', 'Slider Preview-3')
+                  li.slider__item
+                    button(type="button").slider__item-btn.slider__item-btn-1
+                      +image('content/mini-4.jpg', 'slider__item-preview', 'Slider Preview-4')
+                .slider__controlls
+                  button(type="button").slider__controlls-left
+                    +icon('arrow-down', 'arrow-left')
+
+                  button(type="button").slider__controlls-right
+                    +icon('arrow-down', 'arrow-right')
+
+
+            .works__right
+              ul.works__desc-list
+                li.works__desc-item HTML
+                li.works__desc-item CSS
+                li.works__desc-item JavaScript
+              
+              .works__desc
+                h3.works__desc-title Сайт школы образования
+                p.works__desc-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                .works__link
+                  +icon('link', 'link-icon works__link-icon')
+                  a.works__link-content(href="#" target="_blank") Посмотреть сайт
+       
+        .triangles.triangles-bottom
+            svg.triangles__item.triangles-bottom__item.trianles__item_left(viewBox="0 0 1000 100" preserveAspectRatio="none")
+              polygon(
+                points="0,0 0,100 1000,100"
+              )
+            svg.triangles__item.triangles-bottom__item.triangles__item_right(viewBox="0 0 1000 100" preserveAspectRatio="none")
+              polygon(
+                points="0,100 1000,100 1000,0"
+              )
+
+        .bottom-section
+          section(id="reviews-sec").reviews
+            .container.reviews__container
+              .reviews__top-row
+                h2.reviews__title Что обо мне говорят
+                .reviews__slider-controlls
+                  button.reviews__slider-controll-left
+                    +icon('arrow-down', 'arrow-reviews-left')
+                  button.reviews__slider-controll-right
+                    +icon('arrow-down', 'arrow-reviews-right')
+                
+
+              .reviews__content
+                ul.reviews__slider-list
+                  li.reviews__slider-item
+                    .reviews__slider-quote
+                      quote.reviews__slider-quote-text Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!
+                    cite.reviews__slider-quote-author
+                      .reviews__slider-user-pic
+                        +image('content/Dmitry.jpg', 'user-pic_reviews', 'Dmitry Kovalchuk')
+                      .reviews__slider-user-info
+                        span.reviews__slider-user-name Дмитрий Ковальчук
+                        span.reviews__slider-user-occ Основатель LoftSchool
+
+                  li.reviews__slider-item
+                    .reviews__slider-quote
+                      quote.reviews__slider-quote-text Этот код выдержит любые испытания. Только, пожалуйста, не загружайте его на слишком старых браузерах.
+                    cite.reviews__slider-quote-author
+                      .reviews__slider-user-pic
+                        +image('content/Vladimir.jpg', 'user-pic_reviews', 'Vladimir Sabantsev')
+                      .reviews__slider-user-info
+                        span.reviews__slider-user-name Владимир Сабанцев
+                        span.reviews__slider-user-occ Преподаватель
+
+          section(id="form-sec").form.bottom-section__form
+            .container
+              h2.form__title Связаться со мной
+              form(action="POST").form__content
+                .form__row
+
+                  label.form__block
+                    span.form__block-title.form__block-title_user Введите ваше имя
+                    .form__block-container
+                      +icon('user', 'form-icon')
+                      input(type="text" placeholder="Дмитрий Ковальчук" required).form__input
+
+                  label.form__block
+                    span.form__block-title Введите ваш email
+                    .form__block-container
+                      +icon('envelope', 'form-icon')
+                      input(type="text" placeholder="loftschool@study.ru" required).form__input
+
+                .form__row
+
+                  label.form__block
+                    span.form__block-title.form__block-title_textarea Сообщение к письму
+                    .form__block-container.form__block-container_textarea
+                      +icon('message', 'form-icon')
+                      textarea(placeholder="Требуется ваша помощь в создании сайта. Интересует срок и цена вопроса").form__input_textarea
+                
+                button(type="submit").form__btn Отправить
         
-        section.about-me
-          container.container__about-me
-            
+
+        footer.footer
+          .container.footer__container
+
+            .footer__copyright
+
+              .copyright
+                span.copyright__year ©2019
+                .copyright__info
+                  span.copyright__username Марченко Дарья
+                  span.copyright__desc Личный сайт веб-разработчика
+
+            .footer__data
+              .footer__menu
+                ul.footer__menu-list
+                  li.footer__menu-item
+                    a(href="#hero-sec").footer__menu-link Главная
+                  li.footer__menu-item
+                    a(href="#about-sec").footer__menu-link Обо мне
+                  li.footer__menu-item
+                    a(href="#values-sec").footer__menu-link Навыки
+                  li.footer__menu-item
+                    a(href="#works-sec").footer__menu-link Работы
+                  li.footer__menu-item
+                    a(href="#reviews-sec").footer__menu-link Отзывы
+                  li.footer__menu-item
+                    a(href="#form-sec").footer__menu-link Связаться
+              .footer__data-columns
+                .footer__data-col
+                  p.footer__text Этот сайт я сделала в рамках обучения в Школе онлайн образования LoftSchool
+                  ul.footer__socials-list.socials
+                    li.socials__item.socials__item_rounded
+                      a.socials__item-link.socials__item-link_footer(href="https://www.instagram.com/daria739")
+                        +icon('insta', 'social-icon')
+                    li.socials__item.socials__item_rounded
+                      a.socials__item-link.socials__item-link_footer(href="https://vk.com/dm72690571" target="_blank")
+                        +icon('vk', 'social-icon')
+                    li.socials__item.socials__item_rounded
+                      a.socials__item-link.socials__item-link_footer(href="https://github.com/Daria739" target="_blank")
+                        +icon('github', 'social-icon')
+
+
+                .footer__data-col
+                  quote.footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете
+                  cite.footer__cite Martin Golding
