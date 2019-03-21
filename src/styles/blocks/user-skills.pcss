@@ -1,6 +1,11 @@
+
 .user-skills__item {
     margin-bottom: 58px;
     margin-left: -10%;
+
+    @include tablets(){
+        margin-left: 0;
+    }
 }
 
 .user-skills-row__title {
@@ -10,4 +15,8 @@
 
 .user-skills-row__list {
     display: flex;
+        @include tablets() {
+        justify-content: center;
+        align-items: center;
+    }
 }

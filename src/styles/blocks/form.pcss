@@ -1,7 +1,24 @@
+.form__container {
+    display: flex;
+    flex-direction: column;
+
+    @include tablets(){
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .form__title {
     font-weight: 700;
     font-size: 36px;
     padding-bottom: 40px;
+}
+
+.form__content {
+    @include tablets(){
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 .form__row {
@@ -55,6 +72,10 @@
     color: #414c63;
     }
 
+    @include tablets() {
+        padding-left: 0;
+    }
+
 }
 
 .form__input_textarea {
@@ -72,6 +93,10 @@
     height: 30px;
     fill: #414c63;
     opacity: .3;
+
+    @include tablets(){
+        display: none;
+    }
 }
 
 .form__block-container {
@@ -109,6 +134,10 @@
     &:focus {
     background-image: none;
     background-color: #414c63;
+    }
+
+    @include tablets() {
+        align-self: center;
     }
 }
 

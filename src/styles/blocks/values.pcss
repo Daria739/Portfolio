@@ -2,11 +2,22 @@
 .values__container {
     display: flex;
     justify-content: space-between;
+
+    @include tablets() {
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .values__left {
     width: 40%;
+    display: flex;
+
+    @include tablets() {
+        display: none;
+    }
 }
+
 
 .bag-pic {
     max-width: 100%;
@@ -15,12 +26,17 @@
 
 .values__right {
     width: 60%;
+
+    @include tablets(){
+        width: 100%;
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
-
-.values__container {
-    display: flex;
-}
 
 .values__title-text {
     margin-bottom: 60px;
@@ -45,5 +61,19 @@
     max-width: 600px;
 
     margin-bottom: 70px;
+}
+
+.values__image-tablets {
+    display: none; 
+
+    @include tablets(){
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .values__image {
+        max-width: 50%;
+    }
 }
 

@@ -43,6 +43,13 @@ html(lang="ru")
                     li.socials__item
                       a.socials__item-link(href="https://github.com/Daria739" target="_blank")
                         +icon('github', 'social-icon')
+
+                .header__menu-burger
+                  a(href="#").menu-burger
+                    .menu-burger-icon
+                      span.menu-global.menu-burger-top
+                      span.menu-global.menu-burger-middle
+                      span.menu-global.menu-burger-bottom
               
               .hero__content
                 h1.user-info
@@ -120,6 +127,10 @@ html(lang="ru")
                                 stop(offset="0" stop-color="#5500f2")
                                 stop(offset="100%" stop-color="#8f00ef")
                             .skill__title #{skill}
+
+              .values__image-tablets
+                .values__image
+                  +image('content/bag.png', 'bag-pic', 'bag')
 
         section(id="works-sec").works 
           .container.works__container
@@ -206,7 +217,7 @@ html(lang="ru")
                         span.reviews__slider-user-occ Преподаватель
 
           section(id="form-sec").form.bottom-section__form
-            .container
+            .container.form__container
               h2.form__title Связаться со мной
               form(action="POST").form__content
                 .form__row

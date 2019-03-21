@@ -6,6 +6,10 @@
 
 .works__container {
     display: flex;
+
+    @include tablets() {
+        flex-direction: column;
+    }
 }
 
 .works__title {
@@ -16,6 +20,10 @@
 
 .works__left {
     width: 75%;
+
+    @include tablets() {
+    width:100%;
+    }
 }
 
 
@@ -24,6 +32,12 @@
     display: flex;
     flex-direction: column;
     padding-top: 10%;
+
+    @include tablets() {
+    justify-content: center;
+    align-items: center;
+    width:100%;
+    }
 }
 
 .works__desc-list {
@@ -48,6 +62,15 @@
     }
 }
 
+.works__desc {
+    @include tablets(){
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
 .works__desc-title {
     font-size: 30px;
     font-weight: 700;
@@ -59,10 +82,20 @@
     font-weight: 600;
     line-height: 1.8em;
     margin-bottom: 35px;
+
+    @include tablets(){
+        text-align: center;
+    }
 }
 
 .works__link {
+ 
     display: flex;
+
+    @include tablets(){
+    width: 100%;
+    justify-content: center;
+    }
 }
 
 .link-icon {
@@ -73,6 +106,9 @@
 
 .works__link-icon {
     margin-right: 4%;
+    @include tablets() {
+        margin-right: 2%;
+    }
 }
 
 .works__link-content {

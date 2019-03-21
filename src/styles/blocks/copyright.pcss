@@ -3,6 +3,13 @@
     align-items: flex-start;
 }
 
+.copyright {
+    @include tablets(){
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .copyright__year {
     font-size: 48px;
     font-weight: 600;
@@ -16,6 +23,10 @@
     font-weight: 700;
     margin-bottom: 30px;
     display: block;
+
+    @include tablets() {
+        max-width: 150px;
+    }
 }
 
 .copyright__desc {

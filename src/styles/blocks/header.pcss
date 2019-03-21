@@ -10,10 +10,27 @@
     display: flex;
     justify-content: center;
     margin: 0 20px;
+
+    @include tablets() {
+    display: none;
+    }
+}
+
+.header__links {
+    @include tablets() {
+    margin-left: 40%;
+    }
 }
 
 .logo {
     font-size: 35px;
     font-weight: 800;
     color: #414c63;
+}
+
+.header__menu-burger {
+    display: none;
+    @include tablets() {
+        display: inline-block;
+    }
 }

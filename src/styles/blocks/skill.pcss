@@ -18,14 +18,25 @@
     height: 150px;
     transform: rotate(90deg);
     fill: transparent;
-    stroke: #ccc;
+    stroke: #eaeaea;
     stroke-width: 5px;
     position: relative;
+
+    @include tablets() {
+        stroke-width: 10px;
+    }
 }
 
 .skill__title {
     font-size: 15px;
+    font-weight: 700;
     position: absolute;
+
+    @include tablets() {
+    font-size: 14px;
+    opacity: .5;
+    stroke-width: 10px;
+    }
 }
 
 .skill__circle_above {
@@ -35,6 +46,10 @@
     animation: fill 100s linear infinite;
     animation-play-state: paused;
     animation-delay: -.3s;
+
+    @include tablets() {
+    stroke-width: 14px;
+    }
 }
 
 .skill__circle_above[style="animation-delay: -100s"] {

@@ -1,6 +1,10 @@
 .reviews {
     padding-bottom: 15%;
     width: 70%;
+
+    @include tablets() {
+        width: 100%;
+    }
 }
 .reviews__title {
     margin-bottom: 30px;
@@ -12,6 +16,10 @@
 .reviews__top-row {
     display: flex;
     margin-bottom: 5%;
+}
+
+.reviews__slider-controlls {
+    display: flex;
 }
 
 .reviews__slider-controll-left,
@@ -98,6 +106,10 @@
     width: 85px;
     height: 85px;
     margin-right: 2%;
+
+    @include tablets(){
+        display: none;
+    }
 
 }
 

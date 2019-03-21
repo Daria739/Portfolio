@@ -24,6 +24,10 @@
 
 .footer__menu-list {
     display: flex;
+
+    @include tablets() {
+        flex-wrap: wrap;
+    }
 }
 
 .footer__menu-item {
@@ -58,6 +62,10 @@
 
 .footer__data-columns {
     display: flex;
+
+    @include tablets() {
+        flex-wrap: wrap;
+    }
 }
 
 .footer__quote {
