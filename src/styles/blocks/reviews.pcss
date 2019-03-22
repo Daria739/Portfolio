@@ -11,11 +11,22 @@
     margin-right: 80px;
     font-size: 36px;
     font-weight: 700;
+
+    @include phones(){
+        font-size: 24px;
+        margin-right: 0;
+    }
 }
 
 .reviews__top-row {
     display: flex;
     margin-bottom: 5%;
+
+    @include phones() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
 }
 
 .reviews__slider-controlls {
@@ -75,6 +86,20 @@
 
 .reviews__slider-list {
     display: flex;
+
+    @include phones(){
+    justify-content: center;
+    align-items: center;
+    }
+
+}
+
+.reviews__slider-item:nth-child(2) {
+
+    @include phones(){
+    display: none;
+    }
+
 }
 
 .reviews__slider-user-pic {
@@ -91,6 +116,11 @@
 
     &:last-child {
         margin-right: 0;
+    }
+
+    @include phones(){
+        margin-right: 0;
+        max-width: 275px;
     }
 }
 
@@ -118,6 +148,11 @@
     color: rgba(65,76,99,.5);
     line-height: 2rem;
     flex: 1;
+
+    @include phones(){
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
 }
 
 .reviews__slider-quote-pic {

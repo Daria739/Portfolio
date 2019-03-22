@@ -8,14 +8,29 @@
     display: flex;
     justify-content: space-between;
 
+    @include phones(){
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
 }
 
 .footer__data {
     width: 60%;
+    margin-top: 10%;
+
+    @include tablets(){
+        width:100%;
+    }
 }
 
 .footer__copyright {
     width: 30%;
+
+    @include phones(){
+        width: 100%;
+    }
 }
 
 .footer__menu {

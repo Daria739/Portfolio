@@ -9,11 +9,16 @@ width: 100%;
 display: flex;
 align-items: center;
 justify-content: center;
+
+    @include phones(){
+        flex-direction: column;
+    }
 }
 
 
 .about__right {
     margin-left: 10%;
+
 }
 
 
