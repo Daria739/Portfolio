@@ -1,4 +1,5 @@
 include ./mixins.pug
+include ./templates/entry.pug
 
 <!DOCTYPE html>
 html(lang="ru")
@@ -10,7 +11,7 @@ html(lang="ru")
   body
     .wrapper
       .maincontent
-        .section.parallax
+        .parallax
           .parallax__layer(data-speed="0.16")
             +image('content/Sky.png', 'parallax__img sky-pic', 'sky')
           .parallax__layer(data-speed="0.28")
@@ -122,26 +123,8 @@ html(lang="ru")
             .values__right
               h2.values__title Чем я могу быть вам полезна
               p.values__desc-text Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
-              ul.user-skills
-                - 
-                  var skills = [
-                    ['Frontend', ['HTML5', 'CSS3', 'JavaScript', 'Jquery и Vue.js']],
-                    ['Workflow', ['GIT', 'Terminal', 'Gulp', 'Webpack']],
-                  ]
-                each item in skills
-                  li.user-skills__item.user-skills-row
-                    h3.user-skills-row__title #{item[0]}
-                    ul.user-skills-row__list
-                      each skill in item[1]
-                        li.user-skills-row__item
-                          .skill
-                            svg(viewBox="0 0 100 100").skill__circle-shape
-                              circle(cx="50" cy="50" r="40").skill__circle.skill__circle_under
-                              circle(cx="50" cy="50" r="40" ref="color-circle" stroke="url(#gradient)" transform='rotate(180 50 50').skill__circle.skill__circle_above
-                              linearGradient(id="gradient" x1="0%" y1="0%" x2="100%" y2="0")
-                                stop(offset="0" stop-color="#5500f2")
-                                stop(offset="100%" stop-color="#8f00ef")
-                            .skill__title #{skill}
+              #skills-component
+              
 
               .values__image-tablets
                 .values__image
@@ -187,15 +170,9 @@ html(lang="ru")
                   +icon('link', 'link-icon works__link-icon')
                   a.works__link-content(href="#" target="_blank") Посмотреть сайт
        
-        .triangles.triangles-bottom
-            svg.triangles__item.triangles-bottom__item.trianles__item_left(viewBox="0 0 1000 100" preserveAspectRatio="none")
-              polygon(
-                points="0,0 0,100 1000,100"
-              )
-            svg.triangles__item.triangles-bottom__item.triangles__item_right(viewBox="0 0 1000 100" preserveAspectRatio="none")
-              polygon(
-                points="0,100 1000,100 1000,0"
-              )
+        .triangles-bottom
+          svg.triangles-bottom__item(viewBox="0 0 1000 100" preserveAspectRatio="none")
+            polygon(points="0,0 500,100 1000,0")
 
         .bottom-section
           section(id="reviews-sec").reviews
@@ -304,3 +281,5 @@ html(lang="ru")
                 .footer__data-col
                   quote.footer__quote Всегда пишите код так, будто сопровождать его будет склонный к насилию психопат, который знает, где вы живете.
                   cite.footer__cite Martin Golding
+
+
