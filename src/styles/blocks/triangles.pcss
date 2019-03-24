@@ -12,18 +12,28 @@
     fill: #fff;
 }
 
-.triangles__item_left {
-    left: 0;
-}
-
-.triangles__item_right {
-    right: 0;
-}
 
 
-.triangles-bottom__item {
+.triangles-bottom{
     fill: #fff;
+    width:100%;
     position: relative;
-    margin-bottom: -5rem;
-    display: none;
+    bottom: -9.8rem;
+}
+
+.triangles__shape {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 50%;
+  fill: #fff;
+  height: 100%;
+
+  &_left {
+    left: 0;
+  }
+  &_right {
+    right: 0;
+  }
 }
