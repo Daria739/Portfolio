@@ -11,106 +11,141 @@ html(lang="ru")
   body
     .wrapper
       .maincontent
-        .parallax
-          .parallax__layer(data-speed="0.16")
-            +image('content/Sky.png', 'parallax__img sky-pic', 'sky')
-          .parallax__layer(data-speed="0.28")
-            +image('content/Mountain.png', 'parallax__img mountain-pic', 'mountain')
-          .parallax__layer(data-speed="0.35")
-            +image('content/Baloon.png', 'parallax__img baloon-pic', 'baloon')
-          .parallax__layer(data-speed="0.42")
-            +image('content/Cloud.png', 'parallax__img cloud-pic', 'cloud')
-          .parallax__layer(data-speed="0.50")
-            +image('content/Man.png', 'parallax__img man-pic', 'man')
-          .parallax__layer(data-speed="0.58")
-            +image('content/Mountain-2.png', 'parallax__img mountain-second-pic', 'mountain')
-          .parallax__layer(data-speed="0.60")
-            +image('content/White.png', 'parallax__img white-pic', 'white cloud')
+        .welcome-section
+          section.parallax
+            .parallax__layer(data-speed="0.1")
+              picture
+                source(srcset='../../src/images/content/Sky.jpg', media='(max-width: 1800px)').parallax__img
+                source(srcset='../../src/images/content/Sky-desk.jpg',  media='(max-width: 1200px)').parallax__img
+                source(srcset='../../src/images/content/Sky-tablets.jpg',  media='(max-width: 768px)').parallax__img
+                img(srcset='../../src/images/content/Sky-desk.jpg', alt='Sky').parallax__img
 
-            section(id="hero-sec").hero
-              .container.hero__container
-                header.header
-                  span.logo DM
+            .parallax__layer(data-speed="0.15")
+              picture
+                source(srcset='../../src/images/content/Mountain.png', media='(max-width: 1800px)').parallax__img
+                source(srcset='../../src/images/content/Mountain-desk.png',  media='(max-width: 1200px)').parallax__img
+                source(srcset='../../src/images/content/Mountain-tablets.png',  media='(max-width: 768px)').parallax__img
+                img(srcset='../../src/images/content/Mountain-desk.png', alt='Mountain').parallax__img
+              
+            .parallax__layer(data-speed="0.2")
+              picture
+                source(srcset='../../src/images/content/Baloon.png', media='(max-width: 1800px)').parallax__img
+                source(srcset='../../src/images/content/Baloon.png',  media='(max-width: 1200px)').parallax__img
+                source(srcset='../../src/images/content/Baloon-tablets.png',  media='(max-width: 768px)').parallax__img
+                img(srcset='../../src/images/content/Baloon.png', alt='Baloon').parallax__img
+
+            .parallax__layer(data-speed="0.25")
+              picture
+                source(srcset='../../src/images/content/Cloud.png', media='(max-width: 1800px)').parallax__img
+                source(srcset='../../src/images/content/Cloud-desk.png',  media='(max-width: 1200px)').parallax__img
+                source(srcset='../../src/images/content/Cloud-tablets.png',  media='(max-width: 768px)').parallax__img
+                img(srcset='../../src/images/content/Cloud-desk.png', alt='Cloud').parallax__img
+
+            .parallax__layer(data-speed="0.3")
+              picture
+                source(srcset='../../src/images/content/Man.png', media='(max-width: 1800px)').parallax__img
+                source(srcset='../../src/images/content/Man-desk.png',  media='(max-width: 1200px)').parallax__img
+                source(srcset='../../src/images/content/Man-tablets.png',  media='(max-width: 768px)').parallax__img
+                img(srcset='../../src/images/content/Man-desk.png', alt='Man').parallax__img
+
+            .parallax__layer(data-speed="0")
+              picture
+                source(srcset='../../src/images/content/Mountain-2.png', media='(max-width: 1800px)').parallax__img
+                source(srcset='../../src/images/content/Mountain-2-desk.png',  media='(max-width: 1200px)').parallax__img
+                source(srcset='../../src/images/content/Mountain-2-tablets.png',  media='(max-width: 768px)').parallax__img
+                img(srcset='../../src/images/content/Mountain-2-desk.png', alt='Mountain').parallax__img
+
+            .parallax__layer(data-speed="0.42")
+              picture
+                source(srcset='../../src/images/content/White.png', media='(max-width: 1800px)').parallax__img
+                source(srcset='../../src/images/content/White-desk.png',  media='(max-width: 1200px)').parallax__img
+                img(srcset='../../src/images/content/White-desk.png', alt='White clouds').parallax__img
+
+          section(id="hero-sec").hero
+            .container.hero__container
+              header.header
+                span.logo DM
+                
+                .header__menu
+                  nav.nav
+                    ul.nav__list
+                      li.nav__item
+                        a(href="#hero-sec").nav__link Главная
+                      li.nav__item
+                        a(href="#about-sec").nav__link Обо мне
+                      li.nav__item
+                        a(href="#values-sec").nav__link Навыки
+                      li.nav__item
+                        a(href="#works-sec").nav__link Работы
+                      li.nav__item
+                        a(href="#reviews-sec").nav__link Отзывы
+                      li.nav__item
+                        a(href="#form-sec").nav__link Связаться
+
+                .header__links
+                  ul.socials
+                    li.socials__item
+                      a.socials__item-link(href="https://www.instagram.com/daria739" target="_blank")
+                        +icon('insta', 'social-icon')
+                    li.socials__item
+                      a.socials__item-link(href="https://vk.com/dm72690571" target="_blank")
+                        +icon('vk', 'social-icon')
+                    li.socials__item
+                      a.socials__item-link(href="https://github.com/Daria739" target="_blank")
+                        +icon('github', 'social-icon')
+
+                .header__menu-burger
+                  a(href="#").menu-burger
+                    .menu-burger-icon
+                      span.menu-global.menu-burger-top
+                      span.menu-global.menu-burger-middle
+                      span.menu-global.menu-burger-bottom
+              
+              .hero__content
+                h1.user-info
+                  span.user-info__desc Личный сайт веб разработчика
+                  span.user-info__name Дарья Марченко
+              
+              .hero__bottom-buttons
+                button(type="button").scroll-down-button 
+                  span.scroll-down-button__text Скролл
+
+          section(id="about-sec").about
+            .container.about__container
+              .about__left
+                .user
+                  .user__avatar
+                    +image('content/uMmrjh-M3HA.jpg', 'user-pic', 'myPhoto')
                   
-                  .header__menu
-                    nav.nav
-                      ul.nav__list
-                        li.nav__item
-                          a(href="#hero-sec").nav__link Главная
-                        li.nav__item
-                          a(href="#about-sec").nav__link Обо мне
-                        li.nav__item
-                          a(href="#values-sec").nav__link Навыки
-                        li.nav__item
-                          a(href="#works-sec").nav__link Работы
-                        li.nav__item
-                          a(href="#reviews-sec").nav__link Отзывы
-                        li.nav__item
-                          a(href="#form-sec").nav__link Связаться
-
-                  .header__links
-                    ul.socials
-                      li.socials__item
-                        a.socials__item-link(href="https://www.instagram.com/daria739" target="_blank")
-                          +icon('insta', 'social-icon')
-                      li.socials__item
-                        a.socials__item-link(href="https://vk.com/dm72690571" target="_blank")
-                          +icon('vk', 'social-icon')
-                      li.socials__item
-                        a.socials__item-link(href="https://github.com/Daria739" target="_blank")
-                          +icon('github', 'social-icon')
-
-                  .header__menu-burger
-                    a(href="#").menu-burger
-                      .menu-burger-icon
-                        span.menu-global.menu-burger-top
-                        span.menu-global.menu-burger-middle
-                        span.menu-global.menu-burger-bottom
-                
-                .hero__content
-                  h1.user-info
-                    span.user-info__desc Личный сайт веб разработчика
-                    span.user-info__name Дарья Марченко
-                
-                .hero__bottom-buttons
-                  button(type="button").scroll-down-button 
-                    span.scroll-down-button__text Скролл
-
-              section(id="about-sec").about
-                .container.about__container
-                  .about__left
-                    .user
-                      .user__avatar
-                        +image('content/uMmrjh-M3HA.jpg', 'user-pic', 'myPhoto')
-                      
-                      .user__data
-                        table.user__data-table
-                          - 
-                            var data = [
-                              ['Проживаю', 'Санкт-Петербург'],
-                              ['Возраст', '24 года'],
-                              ['Родилась', '28 апреля 1995'],
-                            ]
-                          each row in data
-                            tr.user__data-row
-                              td.user__data-cell.user__data-cell_one #{row[0]}
-                              td.user__data-cell.user__data-cell_two #{row[1]}
+                  .user__data
+                    table.user__data-table
+                      - 
+                        var data = [
+                          ['Проживаю', 'Санкт-Петербург'],
+                          ['Возраст', '24 года'],
+                          ['Родилась', '28 апреля 1995'],
+                        ]
+                      each row in data
+                        tr.user__data-row
+                          td.user__data-cell.user__data-cell_one #{row[0]}
+                          td.user__data-cell.user__data-cell_two #{row[1]}
 
 
-                  .about__right
-                    span.about__welcome Привет, меня зовут
-                    h2.about__username Дарья Марченко
+              .about__right
+                span.about__welcome Привет, меня зовут
+                h2.about__username Дарья Марченко
 
-                    .about__desc
-                      p.about__desc-info Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
-                      p.about__desc-ps Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите как тут всё классно и красиво!
+                .about__desc
+                  p.about__desc-info Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  p.about__desc-ps Этот сайт я сделала в рамках обучения в Школе онлайн-образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите как тут всё классно и красиво!
 
-            .triangles
-              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
-                polygon(points="0,0 0,100 1000,100")
-              svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
-                polygon(points="0,100 1000,100 1000,0")
+      .triangles
+        svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+          polygon(points="0,0 0,100 1000,100")
+        svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+          polygon(points="0,100 1000,100 1000,0")
 
+      .middle-section
         section(id="values-sec").values 
           .container.values__container
             .values__left
@@ -131,12 +166,12 @@ html(lang="ru")
             h2.works__title Мои Работы
             .works__content
                 #slider-component
-                
-        .triangles.triangles-bottom
-          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
-            polygon(points="0,0 1000,0 1000,100")
-          svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
-            polygon(points="0,0 0,100 1000,0")
+                  
+      .triangles.triangles-bottom
+        svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_left
+          polygon(points="0,0 1000,0 1000,100")
+        svg(viewBox="0 0 1000 100" preserveAspectRatio="none").triangles__shape.triangles__shape_right
+          polygon(points="0,0 0,100 1000,0")
 
       .bottom-section
         section.reviews#reviews
@@ -219,7 +254,7 @@ html(lang="ru")
                     textarea(placeholder="Требуется ваша помощь в создании сайта. Интересует срок и цена вопроса").form__input_textarea
               
               button(type="submit").form__btn Отправить
-        
+          
 
       footer.footer
         .container.footer__container

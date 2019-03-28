@@ -11,11 +11,10 @@ new Vue({
   data() {
     return {
       flickityOptions: {
-        initialIndex: 3,
+        initialIndex: 0,
         prevNextButtons: false,
         pageDots: false,
-        wrapAround: true,
-        groupCells: 2
+        groupCells: true
         
         // any options from Flickity can be used
       }
