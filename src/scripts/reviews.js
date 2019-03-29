@@ -11,7 +11,6 @@ new Vue({
   data() {
     return {
       flickityOptions: {
-        initialIndex: 0,
         prevNextButtons: false,
         pageDots: false,
         groupCells: true

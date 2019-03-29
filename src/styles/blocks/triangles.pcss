@@ -3,8 +3,15 @@
     height: 10rem;
     bottom: 0;
 
+  @media screen and (max-width: 640px) {
+    height: 3.3rem;
+    bottom: 3.3rem;
+  }
+   
+
     @include phones() {
-      bottom: 0;
+    bottom: 5.375rem;
+    height: 5.5rem;
     }
 }
 
@@ -14,12 +21,22 @@
     width:100%;
     position: relative;
     bottom: -9.8rem;
+    z-index: 8;
+
+  @media screen and (max-width: 640px){
+  bottom: -11.5rem;
+  }
+
+
 
     @include phones() {
-      bottom: -3.9rem;
+      bottom: -11.4rem;
       height: 4rem;
       width: 100%;
     }
+
+
+
 }
 
 .triangles__shape {
