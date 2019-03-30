@@ -6,6 +6,11 @@
     @include tablets(){
         margin-left: 0;
     }
+
+    @include phones {
+    padding: 0;
+    margin: 0 auto;
+    }
 }
 
 .user-skills-row__title {
@@ -26,4 +31,11 @@
         flex-wrap: wrap;
         }
 
+}
+
+.user-skills-row__item {
+    @include phones() {
+    width: 50%;
+    margin-right: 0;
+    }
 }
