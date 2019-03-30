@@ -1,7 +1,19 @@
 .socials {
   display: flex;
   align-items: center;
+
+  @include phones() {
+    display: none;
+  }
 }
+
+
+.socials_footer {
+  @include phones(){
+    display: flex;
+  }
+}
+
 
 .social-icon {
     width: 30px;

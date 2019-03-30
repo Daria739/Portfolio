@@ -1,5 +1,6 @@
 .footer {
     padding: 40px 0;
+    margin-top: 45%;
     color: #fff;
     background-color: #1f232d;
 }
@@ -8,14 +9,28 @@
     display: flex;
     justify-content: space-between;
 
+    @include phones(){
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
+
 }
 
 .footer__data {
     width: 60%;
+
+    @include tablets(){
+        width:100%;
+    }
 }
 
 .footer__copyright {
     width: 30%;
+
+    @include phones(){
+        width: 100%;
+    }
 }
 
 .footer__menu {
@@ -24,6 +39,10 @@
 
 .footer__menu-list {
     display: flex;
+
+    @include tablets() {
+        flex-wrap: wrap;
+    }
 }
 
 .footer__menu-item {
@@ -58,6 +77,10 @@
 
 .footer__data-columns {
     display: flex;
+
+    @include tablets() {
+        flex-wrap: wrap;
+    }
 }
 
 .footer__quote {

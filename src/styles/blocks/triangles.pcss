@@ -1,26 +1,57 @@
 .triangles {
     position: relative;
-    height: 80px;
-    margin-top: -80px;
+    height: 10rem;
+    bottom: 0;
+
+  @media screen and (max-width: 640px) {
+    height: 3.3rem;
+    bottom: 3.3rem;
+  }
+   
+
+    @include phones() {
+    bottom: 5.375rem;
+    height: 5.5rem;
+    }
 }
 
-.triangles__item {
-    display: block;
-    height: 100%;
-    position: absolute;
-    width: 100%;
+
+.triangles-bottom{
     fill: #fff;
+    width:100%;
+    position: relative;
+    bottom: -9.8rem;
+    z-index: 8;
+
+  @media screen and (max-width: 640px){
+  bottom: -11.5rem;
+  }
+
+
+
+    @include phones() {
+      bottom: -13.5rem;
+      height: 6rem;
+      width: 100%;
+    }
+
+
+
 }
 
-.triangles__item_left {
+.triangles__shape {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  display: block;
+  width: 50%;
+  fill: #fff;
+  height: 100%;
+
+  &_left {
     left: 0;
-}
-
-.triangles__item_right {
+  }
+  &_right {
     right: 0;
-}
-
-
-.triangles-bottom__item {
-fill: #dce4f3;
+  }
 }

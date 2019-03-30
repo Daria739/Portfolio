@@ -1,55 +1,145 @@
 .slider {
-    max-width: 975px;
-    max-height: 550px;
-    width: 85%;
     display: flex;
-    flex-direction: column;
-    align-items: flex-end;
-    position: relative;
+    justify-content: space-between;
+    align-items: flex-start;
+        @include tablets {
+            flex-direction: column;
+            justify-content: flex-start;
+        }
+
+        @include phones(){
+          margin-left: 3%;
+          margin-right: 3%;
+        }
+}
+
+
+.slider__pics {
+  width: 66%;
+  position: relative;
+  z-index: 10;
+  height: 30rem;
+
+  @include tablets {
+    margin-bottom: 105px;
+    width: 86%;
+  }
+  &:before {
+    content: attr(data-slide);
+    position: absolute;
+    top: 50%;
+    transform: translateY(-60%);
+    line-height: 1;
+    left: 100%;
+    font-size: 400px;
+    font-weight: 800;
+    margin-left: -8%;
+    color: rgba($text-color, .05);
+    @include desktop {
+      top: 0;
+      transform: translateY(-15%);
+      margin-left: -11%;
+    }
+  }
+  @include phones {
+    width: 100%;
+    margin-bottom: 60px;
+    &:before {
+      display: none;
+    }
+  }
+}
+
+.slider__pics-content {
+  z-index: 10;
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%; 
+}
+
+.slider__fullpic-container {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
 }
 
 .slider-pic {
-    width: 100%;
-    height: 100%;
-    display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  @media screen and (max-width: 760px),
+  @include phones(){
+    object-position: left center;
+  }
 }
 
 .slider__list {
-    position: absolute;
-    bottom: 3.4rem;
-    right: -33px;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 178px;
 
-    display: flex;
-    flex-direction: column-reverse;
+ @media screen and (max-width: 760px) {
+   right: -11%;
+ }
+
+
+ @media screen and (max-width: 540px) {
+    display: none;
+  }
 }
 
+
 .slider__item {
-    width: 80%;
-    margin-top: -3%;
+    height: 100px;
+
+    @include tablets(){
+    max-width:60%;
+    margin-top:0;
+    }
+}
+
+.slider__item-preview {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+
+    @include tablets() {
+      object-position: left center;
+    }
 }
 
 .slider__item-btn {
     padding: 0;
 
-    transition-duration: .2s;
-
     &:hover {
-        border: 3px solid #ae00ff;
+        outline: 3px solid #ae00ff;
     }
 
     &:active {
-        border: 3px solid #ae00ff;
+        outline: 3px solid #ae00ff;
     }
 
-    &_active,
+    &.active,
     &:focus {
-        border: 3px solid #f29400;
+       outline: 3px solid #f29400;
     }
 }
 
 .slider__controlls{
     max-width: 100px;
     background-color: #2d3c4e;
+    position: absolute;
+    right: 0;
+
+    @include phones(){
+        position: absolute;
+        bottom: 0;
+    }
 
    
 }
@@ -58,7 +148,6 @@
 .slider__controlls-right  {
     height: 50px;
     width: 50px;
-    transition-duration: .2s;
 
      &:hover {
         background-color: #5500f2;

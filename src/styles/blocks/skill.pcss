@@ -18,23 +18,38 @@
     height: 150px;
     transform: rotate(90deg);
     fill: transparent;
-    stroke: #ccc;
+    stroke: #eaeaea;
     stroke-width: 5px;
     position: relative;
+
+    @include tablets() {
+        stroke-width: 10px;
+    }
 }
 
 .skill__title {
     font-size: 15px;
+    font-weight: 700;
     position: absolute;
+
+    @include tablets() {
+    font-size: 14px;
+    opacity: .5;
+    stroke-width: 10px;
+    }
 }
 
 .skill__circle_above {
-    stroke-dasharray: 150;
-    stroke-dashoffset: 150;
+    stroke-dasharray: 251;
+    stroke-dashoffset: 251;
     stroke-width:8px;
     animation: fill 100s linear infinite;
     animation-play-state: paused;
     animation-delay: -.3s;
+
+    @include tablets() {
+    stroke-width: 14px;
+    }
 }
 
 .skill__circle_above[style="animation-delay: -100s"] {

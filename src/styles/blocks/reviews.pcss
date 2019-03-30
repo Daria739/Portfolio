@@ -1,17 +1,39 @@
 .reviews {
-    padding-bottom: 15%;
+    padding-top: 20%;
     width: 70%;
+
+    @include tablets() {
+        width: 100%;
+        padding-top: 28%;
+    }
+
+
 }
 .reviews__title {
     margin-bottom: 30px;
     margin-right: 80px;
     font-size: 36px;
     font-weight: 700;
+
+    @include phones(){
+        font-size: 24px;
+        margin-right: 0;
+    }
 }
 
 .reviews__top-row {
     display: flex;
     margin-bottom: 5%;
+
+    @include phones() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}
+
+.reviews__slider-controlls {
+    display: flex;
 }
 
 .reviews__slider-controll-left,
@@ -66,7 +88,19 @@
 }
 
 .reviews__slider-list {
-    display: flex;
+    @include phones(){
+    justify-content: center;
+    align-items: center;
+    }
+
+}
+
+.reviews__slider-item:nth-child(2) {
+
+    @include phones(){
+    display: none;
+    }
+
 }
 
 .reviews__slider-user-pic {
@@ -79,10 +113,14 @@
 }
 
 .reviews__slider-item {
-    margin-right: 50px;
+    width: 50%;
+    padding-left: 3rem;
 
-    &:last-child {
-        margin-right: 0;
+    @include phones(){
+    width: 100%;
+    margin-right: 0;
+    padding: 0;
+    margin: 0;
     }
 }
 
@@ -95,9 +133,13 @@
     display: block;
     background: svg-load('quote.svg', fill=$text-color, width=100%, height=100%) no-repeat;
     opacity: .1;
-    width: 85px;
-    height: 85px;
-    margin-right: 2%;
+    width: 20rem;
+    height: 10rem;
+    margin-right: 4%;
+
+    @include tablets(){
+        display: none;
+    }
 
 }
 
@@ -105,14 +147,17 @@
     font-weight: 600;
     color: rgba(65,76,99,.5);
     line-height: 2rem;
-    flex: 1;
+
+    @include phones(){
+        font-size: 14px;
+        line-height: 1.5rem;
+    }
 }
 
 .reviews__slider-quote-pic {
     width: 84px;
     height: 84px;
 
-    margin-right: 5%;
 
 }
 
@@ -121,8 +166,6 @@
 }
 
  .reviews__slider-quote {
-     display: flex;
-     align-items: flex-start;
  }
 
  .reviews__slider-quote-author {
@@ -136,7 +179,7 @@
      display: flex;
      flex-direction: column;
      font-style: normal;
-     margin-left: 5%;
+    margin-left: 4%;
  }
 
  .reviews__slider-user-name {

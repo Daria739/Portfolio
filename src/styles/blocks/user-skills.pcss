@@ -1,13 +1,41 @@
+
 .user-skills__item {
     margin-bottom: 58px;
     margin-left: -10%;
+
+    @include tablets(){
+        margin-left: 0;
+    }
+
+    @include phones {
+    padding: 0;
+    margin: 0 auto;
+    }
 }
 
 .user-skills-row__title {
     font-size: 30px;
     font-weight: 700;
+
+    @include phones() {
+        font-size: 28px;
+    }
 }
 
 .user-skills-row__list {
     display: flex;
+
+        @include tablets() {
+        justify-content: center;
+        align-items: center;
+        flex-wrap: wrap;
+        }
+
+}
+
+.user-skills-row__item {
+    @include phones() {
+    width: 50%;
+    margin-right: 0;
+    }
 }

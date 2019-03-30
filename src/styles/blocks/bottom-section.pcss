@@ -2,9 +2,22 @@
     background: url('../../src/images/content/Budda.jpg') center no-repeat;
     background-size: cover;
     height: 100%;
+    width:100%;
+    min-height: 900px;
+
+    @include phones() {
+        min-height: 700px;
+    }  
+
+    @media screen and (max-width: 640px) {
+        margin-top: 25%;
+    }
 }
 
 .bottom-section__form {
-    padding-bottom: 15%;
     width: 70%;
+
+    @include tablets(){
+        width: 100%;
+    }
 }

@@ -20,10 +20,22 @@
 .user__data-cell {
     font-weight: 600;
     padding-bottom: 6%;
+    @include phones() {
+        font-size: 14px;
+    }
 }
 
 .user__data-cell_one {
     color: rgba(65, 76, 99, .5);
     padding-right: 15%;
+
+    @include phones() {
+        padding-right: 35%;
+    }
 }
 
+.user__data-table {
+    @include phones() {
+        padding-bottom: 15%;
+    }
+}

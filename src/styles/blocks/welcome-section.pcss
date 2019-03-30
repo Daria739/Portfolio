@@ -1,4 +1,15 @@
 .welcome-section {
-    background: url('../../src/images/content/Mountain-Baloon.jpg') center no-repeat;
+    
+    
+
+    @media screen and (max-width: 640px) {
+    background: url('../../src/images/content/Mountain-Baloon.jpg')25% no-repeat;
     background-size: cover;
+    }
+
+    @include phones() {
+    background: url('../../src/images/content/Mountain-Baloon.jpg') 70% no-repeat;
+    background-size: cover;
+    }
+
 }
