@@ -192,21 +192,9 @@
           .works__content
             ul.works__content-list
 
-              li.works__content-item
-                .works__content-top
-                  img(src="../images/content/preview-1.jpg" alt="Preview").works__content-top-pic
-                  ul.works__tags-list
-                    li.works__tags-item HTML
-                    li.works__tags-item CSS
-                    li.works__tags-item Javascript
-
-                .works__desc
-                  h3.title.works__title-desc Сайт школы образования
-                  p.works__info Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелый испытаний и бессонных ночей!
-                  a(href="#").works__link http://loftschool.ru
-                  .works__btns
-                    button(type="button").btn.btn-edit Править
-                    button(type="button").btn.btn-delete Удалить
+              li.works__content-item.works__content-item_new-card
+                button(type="button").works__content-item_new-card-btn
+                  span.works__content-item_new-card-title Добавить работу
 
               li.works__content-item
                 .works__content-top
@@ -268,6 +256,95 @@
                   .works__btns
                     button(type="button").btn.btn-edit Править
                     button(type="button").btn.btn-delete Удалить
+      section.reviews
+        .container.reviews__container
+          h1.title.reviews__title Блок «Отзывы»
+          .reviews__new
+            h2.title.reviews__new-title Новый отзыв
+            form.reviews__form
+              .form__main-content
+                .form__col.form__col_left
+                  .form__user-photo
+                  button(type="button").form__user-add-photo Добавить фото
+
+                .form__col.form__col_right
+                  .form__row
+                    label.form__block
+                      span.form__block-title.form__block-title_user Имя автора
+                      .form__block-container
+                        input(type="text" placeholder="Дмитрий Ковальчук" required).form__input
+
+                    label.form__block
+                      span.form__block-title Титул автора
+                      .form__block-container
+                        input(type="text" placeholder="Основатель LoftSchool" required).form__input
+
+                  .form__row
+                  label.form__block.form__block_textarea
+                    span.form__block-title.form__block-title_textarea Сообщение к письму
+                    .form__block-container.form__block-container_textarea
+                      textarea(placeholder="Эта девушка проходила обучение веб-разработке не где-то, а в LoftSchool! 4,5 месяца только самых тяжелых испытаний и бессонных ночей!").form__input_textarea
+              .form__btns
+                button(type="button").form__btn-cancel Отмена
+                button(type="button").form__btn-save Сохранить
+            
+          ul.reviews__list
+            li.reviews__item.reviews__item_new
+              button(type="button").reviews__item_new-btn
+                span.reviews__item_new-title Добавить отзыв
+
+            li.reviews__item
+              .reviews__item-top
+                .reviews__author-img
+                  img(src="../images/content/Vladimir.jpg" alt="Vladimir Sabantsev").reviews__author-pic
+                .reviews__author-info
+                  span.reviews__author-name Владимир Сабанцев
+                  span.reviews__author-occ Преподаватель
+              .reviews__content
+                p.reviews__info Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+              .reviews__btns
+                  button(type="button").btn.btn-edit Править
+                  button(type="button").btn.btn-delete Удалить
+
+            li.reviews__item
+              .reviews__item-top
+                .reviews__author-img
+                  img(src="../images/content/Vladimir.jpg" alt="Vladimir Sabantsev").reviews__author-pic
+                .reviews__author-info
+                  span.reviews__author-name Владимир Сабанцев
+                  span.reviews__author-occ Преподаватель
+              .reviews__content
+                p.reviews__info Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+              .reviews__btns
+                  button(type="button").btn.btn-edit Править
+                  button(type="button").btn.btn-delete Удалить
+            li.reviews__item
+              .reviews__item-top
+                .reviews__author-img
+                  img(src="../images/content/Vladimir.jpg" alt="Vladimir Sabantsev").reviews__author-pic
+                .reviews__author-info
+                  span.reviews__author-name Владимир Сабанцев
+                  span.reviews__author-occ Преподаватель
+              .reviews__content
+                p.reviews__info Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+              .reviews__btns
+                  button(type="button").btn.btn-edit Править
+                  button(type="button").btn.btn-delete Удалить
+            li.reviews__item
+              .reviews__item-top
+                .reviews__author-img
+                  img(src="../images/content/Vladimir.jpg" alt="Vladimir Sabantsev").reviews__author-pic
+                .reviews__author-info
+                  span.reviews__author-name Владимир Сабанцев
+                  span.reviews__author-occ Преподаватель
+              .reviews__content
+                p.reviews__info Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах
+              .reviews__btns
+                  button(type="button").btn.btn-edit Править
+                  button(type="button").btn.btn-delete Удалить
+
+
+        
 
 
               
@@ -302,4 +379,6 @@
 @import "../styles/admin/about.pcss";
 @import "../styles/admin/cards.pcss";
 @import "../styles/admin/works.pcss";
+@import "../styles/admin/reviews.pcss";
+@import "../styles/admin/form.pcss";
 </style>
