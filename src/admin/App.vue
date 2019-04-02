@@ -1,5 +1,26 @@
 <template lang="pug">
   .wrapper
+    section.login
+      .login__content
+       
+        form.login__form
+          button(type="button").login__form-close
+          h1.login__form-title Авторизация
+          .login__row
+            label.login__form-block
+              span.login__form-block-title Логин
+              .login__form-block-container
+                .login__input-user-pic
+                input(type="text" placeholder="Terminator__2000" required).login__input
+          .login__row
+            label.login__form-block
+              span.login__form-block-title Пароль
+              .login__form-block-container
+                .login__input-password-pic
+                input(type="text" placeholder="••••••••" required).login__input
+          .login__btn
+            button(type="submit").login__btn-submit Отправить
+
     header.header
       .container.header__container
         .header__col.header__col_left
@@ -373,6 +394,7 @@
 @import "normalize.css";
 @import "../styles/mixins.pcss";
 @import "../styles/layout/base.pcss";
+@import "../styles/admin/login.pcss";
 @import "../styles/admin/header.pcss";
 @import "../styles/admin/nav.pcss";
 @import "../styles/admin/main-content.pcss";
