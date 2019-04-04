@@ -9,6 +9,14 @@ form {
     justify-content: flex-start;
     padding-top: 5%;
     padding-bottom: 5%;
+
+    &_works {
+        @include tablets(){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+    }
 }
 
 .form__col_left {
@@ -19,6 +27,15 @@ form {
 
 .form__col_right {
     width: 70%;
+    
+    @include tablets(){
+        margin-right: 0;
+        margin-top: 5%;
+    }
+
+    @include phones() {
+        width: 100%;
+    }
 }
 
 .form__user-photo {
@@ -61,6 +78,7 @@ form {
 
     @include phones(){
     margin-right: 0;
+    margin-bottom: 5%;
     }
 
 }
@@ -127,6 +145,14 @@ form {
 .form__btns {
     display: flex;
     justify-content: flex-end;
+
+    @include tablets(){
+        justify-content: center;
+    }
+
+    @include phones() {
+        margin-bottom: 8%;
+    }
 }
 
 .form__btn-cancel {
@@ -159,7 +185,7 @@ form {
     color: #8f98a8;
 }
 
-.form__uadd-photo-btn {
+.form__add-photo-btn {
     width: 180px;
     height: 50px;
     text-transform: uppercase;
@@ -169,4 +195,30 @@ form {
     padding: 16px 20px;
     border-radius: 25px;
     margin-top: 3%;
+}
+
+.form__input_works {
+    width: 100%;
+}
+
+.form__main-content_reviews {
+    @include phones() {
+        flex-direction: column;
+    }
+}
+
+.form__col_left-reviews {
+    @include phones() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+    }
+}
+
+.form__row-reviews {
+    @include phones() {
+        display: flex;
+        flex-direction: column;
+    }
 }

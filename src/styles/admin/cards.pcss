@@ -8,7 +8,7 @@
 }
 
 .cards__item {
-    width: calc(50% - 1.8rem);
+    width: calc(50% - 1.9rem);
     background-color: #fff;
     height: 100%;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.09);
@@ -22,6 +22,25 @@
 
     &:last-child {
         margin-right: 0;
+    }
+
+    @media screen and (max-width: 940px)(){
+        margin-bottom: 4%;  
+        padding: 25px;
+        flex: 1;
+    }
+
+    @include phones(){
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 4%;
+    }
+}
+
+.cards__item_new {
+    @include tablets(),
+    @media screen and (max-width: 840px){
+        display: none;
     }
 }
 
@@ -48,7 +67,15 @@
         opacity: 1;
         color: #424269;
     }
+
+    @include tablets(){
+        max-width: 120px;
+        font-size: 16px;
+        font-weight: 500px;
+    }
+
 }
+
 
 .cards__form-block {
     display: flex;
@@ -56,11 +83,18 @@
     margin-right: 50px;
     padding-bottom: 14px;
     
+
+}
+
+.cards__form-block-name {
+    @include tablets(){
+        border: none;
+        margin-right: 0;
+    }
 }
 
 .cards__form-block_percent {
     margin-right: 0;
-    width: 15%;
     display: flex;
     align-items: center;
 }
@@ -68,10 +102,25 @@
 .cards__bottom {
     display: flex;
     justify-content: flex-end;
+
+    @include tablets(){
+        max-width: 255px;
+        justify-content: space-between;
+    }
 }
 
 .card__input-percent {
     max-width: 55px;
+
+    @include tablets(){
+        margin-right: -20%;
+    }
+}
+
+.cards__input-new-skill {
+    @include tablets() {
+        max-width: 155px;
+    }
 }
 
 .cards__top {
@@ -79,10 +128,28 @@
     align-items: center;
     padding-bottom: 16px;
     border-bottom: 1px solid #ccc;
+
+    @media screen and (max-width: 840px),
+    @include tablets() {
+    justify-content: space-between;
+        &:after {
+            content: "";
+            display: block;
+            background: svg-load("pencil.svg", fill=#a0a5b1, width=100%,height=100%)center center no-repeat;
+            width: 17px;
+            height: 17px;
+        }
+    }
+
 }
 
 .cards__top-btns {
     display: flex;
+
+      @media screen and (max-width: 840px),
+      @include tablets() {
+        display: none;
+    }
 }
 
 .cards__top-btn-approve {

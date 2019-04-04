@@ -10,6 +10,12 @@
     justify-content: space-between;
     align-items: center;
     color: #fff;
+
+    @include phones(){
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+    }
 }
 
 .header__col {
@@ -19,6 +25,10 @@
 
 .header__col_left {
     width: 80%;
+}
+
+.header__col_right {
+    margin-left: 16%;
 }
 
 .header__user-avatar {
@@ -40,6 +50,10 @@
 .header__desc {
     font-size: 14px;
     opacity: .5;
+
+    @include phones() {
+        display: none;
+    }
 }
 
 .header__link-close {

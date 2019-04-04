@@ -1,7 +1,10 @@
 .reviews__container {
     display: flex;
     flex-direction: column;
-    min-height: 1200px;
+
+    @include phones() {
+        width: 100%;
+    }
 }
 
 .reviews__title {
@@ -16,6 +19,7 @@
     height: 100%;
     box-shadow: 0 0 10px 5px rgba(0,0,0,0.09);
     padding: 22px 16px;
+
 }
 
 .reviews__new-title {
@@ -45,12 +49,23 @@
         margin-right: 0;
     }
     
+    @include tablets() {
+        width: 46%;
+    }
+
+    @include phones() {
+        width: 100%;
+    }
 }
 
 .reviews__list {
     display: flex;
     flex-wrap: wrap;
     margin-top: 3%;
+
+    @include phones() {
+        flex-direction: column;
+    }
 }
 
 .reviews__item_new {
@@ -62,7 +77,9 @@
     justify-content: center;
     max-height: 23.75rem;
 
-
+    @include phones() {
+        flex-direction: row;
+    }
 
     &:before {
         content: "+";
@@ -79,7 +96,24 @@
         text-align: center;
         font-weight: 400;
         margin-bottom: 3%;
+
+        @include phones() {
+            width: 110px;
+            height: 110px;
+            margin-bottom: 0;
+            margin-right: 5%;
+        }
     }
+
+
+    @include tablets() {
+        width: 46%;
+    }
+
+    @include phones() {
+        width: 100%;
+    }
+
 }
 
 .reviews__item_new-title {

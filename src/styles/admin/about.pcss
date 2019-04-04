@@ -1,18 +1,35 @@
 .about__container {
     display: flex;
     flex-direction: column;
+
+    @include phones(){
+        width: 100%;
+    }
 }
 
 .about__top {
     display: flex;
     margin-top: 50px;
     margin-bottom: 50px;
+
+
+    @include tablets(){
+        width: 100%;
+    }
+    @include phones(){
+        flex-direction: column;
+        margin-left: 5%;
+    }
 }
 
 .about__title {
     font-size: 21px;
     font-weight: 700;
     margin-right: 5%;
+
+    @include phones(){
+        margin-bottom: 5%;
+    }
 }
 
 .about__top-btn {
@@ -54,9 +71,18 @@
         margin-right: 10px;
         text-align: center;
         width: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
         height: 20px;
         background-color: #383bcf;
         border-radius: 50%;
         
+
+        @include tablets(){
+            width: 15px;
+            height: 15px;
+            margin-right: 5px;
+        }
     }
 }

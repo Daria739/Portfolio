@@ -1,6 +1,13 @@
 .nav__list {
     display: flex;
     padding-left: 33px;
+
+    @include phones(){
+       padding-left: 0;
+       justify-content: space-between;
+       padding-right: 10px;
+       padding-left: 10px;
+    }
 }
 
 .nav__item {

@@ -52,7 +52,7 @@
 
             .cards
               ul.cards__list
-                li.cards__item
+                li.cards__item.cards__item_new
                   .cards__top
                     label.cards__form-block
                       input(type="text" placeholder="Название новой группы").cards__input
@@ -62,7 +62,7 @@
                   .cards__main-content
                   .cards__bottom
                     label.cards__form-block
-                      input(type="text" placeholder="Новый навык").cards__input
+                      input(type="text" placeholder="Новый навык").cards__input.cards__input-new-skill
                     label.cards__form-block.cards__form-block_percent
                       input(type="text" placeholder="100").cards__input.card__input-percent
                       span.card__input-percent %
@@ -71,8 +71,8 @@
                 
                 li.cards__item
                   .cards__top
-                    label.cards__form-block
-                      input(type="text" placeholder="Название новой группы" value="Workflow").cards__input
+                    label.cards__form-block.cards__form-block-name
+                      input(type="text" placeholder="Название новой группы" value="Workflow").cards__input.cards__input_title
                     .cards__top-btns
                       button(type="button").cards__top-btn-approve
                       button(type="button").cards__top-btn-remove
@@ -141,7 +141,7 @@
 
                 li.cards__item
                   .cards__top
-                    label.cards__form-block
+                    label.cards__form-block.cards__form-block-name
                       input(type="text" placeholder="Название новой группы" value="Workflow").cards__input
                     .cards__top-btns
                       button(type="button").cards__top-btn-approve
@@ -202,7 +202,7 @@
 
                   .cards__bottom
                     label.cards__form-block
-                      input(type="text" placeholder="Новый навык").cards__input
+                      input(type="text" placeholder="Новый навык").cards__input.cards__input-new-skill
                     label.cards__form-block.cards__form-block_percent
                       input(type="text" placeholder="100").cards__input.card__input-percent
                       span.card__input-percent %
@@ -216,23 +216,23 @@
               li.works__content-item.works__content-item_edit-card
                 h2.title.works__new-title Редактирование работы
                 form.works__form
-                  .form__main-content
+                  .form__main-content.form__main-content_works
                     .form__col.form__col_left
                       .form__add-photo Перетащите или загрузите для загрузки изображения
-                        button(type="button").form__uadd-photo-btn Загрузить
+                        button(type="button").form__add-photo-btn Загрузить
 
                     .form__col.form__col_right
                       .form__row
                         label.form__block
                           span.form__block-title.form__block-title_user Название
                           .form__block-container
-                            input(type="text" placeholder="Дизайн сайта для автосалона Porsche" required).form__input
+                            input(type="text" placeholder="Дизайн сайта для автосалона Porsche" required).form__input.form__input_works
 
                       .form__row
                         label.form__block
                           span.form__block-title.form__block-title_user Ссылка
                           .form__block-container
-                            input(type="text" placeholder="https://www.porsche-pulkovo.ru" required).form__input
+                            input(type="text" placeholder="https://www.porsche-pulkovo.ru" required).form__input.form__input_works
 
                       .form__row
                         label.form__block.form__block_textarea
@@ -253,7 +253,44 @@
                   .form__btns
                     button(type="button").form__btn-cancel Отмена
                     button(type="button").form__btn-save Сохранить
-                
+
+              
+              li.works__content-item.works__content-item_edit-card-mobile
+                h2.title.works__new-title Редактирование работы
+                .works__content-top-mobile
+                  img(src="../images/content/preview-1.jpg" alt="Preview").works__content-preview-mobile
+                  button(type="button").works__content-mobile-btn Изменить превью
+                .form__row
+                  label.form__block
+                    span.form__block-title.form__block-title_user Название
+                    .form__block-container
+                      input(type="text" placeholder="Дизайн сайта для автосалона Porsche" required).form__input.form__input_works
+
+                .form__row
+                  label.form__block
+                    span.form__block-title.form__block-title_user Ссылка
+                    .form__block-container
+                      input(type="text" placeholder="https://www.porsche-pulkovo.ru" required).form__input.form__input_works
+
+                .form__row
+                  label.form__block.form__block_textarea
+                    span.form__block-title.form__block-title_textarea Описание
+                    .form__block-container.form__block-container_textarea
+                      textarea(placeholder="Порше Центр Пулково - является официальным дилером марки Порше в Санкт-Петербурге и предоставляет полный цикл услуг по продаже и сервисному обслуживанию автомобилей").form__input_textarea
+                .form__row
+                  label.form__block
+                    span.form__block-title.form__block-title_user Добавление тэга
+                    .form__block-container
+                      input(type="text" placeholder="Jquery, Vue.js, HTML5").form__input
+                .form__row
+                  ul.works__tags-list.works__tags-list_edit
+                    li.works__tags-item.works__tags-item_edit HTML
+                    li.works__tags-item.works__tags-item_edit CSS
+                    li.works__tags-item.works__tags-item_edit Javascript
+                    
+                .form__btns
+                  button(type="button").form__btn-cancel Отмена
+                  button(type="button").form__btn-save Сохранить
 
               li.works__content-item.works__content-item_new-card
                 button(type="button").works__content-item_new-card-btn
@@ -325,13 +362,13 @@
           .reviews__new
             h2.title.reviews__new-title Новый отзыв
             form.reviews__form
-              .form__main-content
-                .form__col.form__col_left
+              .form__main-content.form__main-content_reviews
+                .form__col.form__col_left.form__col_left-reviews
                   .form__user-photo
                   button(type="button").form__user-add-photo Добавить фото
 
                 .form__col.form__col_right
-                  .form__row
+                  .form__row.form__row-reviews
                     label.form__block
                       span.form__block-title.form__block-title_user Имя автора
                       .form__block-container
