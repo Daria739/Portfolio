@@ -76,6 +76,23 @@
     align-items: center;
     justify-content: center;
     max-height: 23.75rem;
+    cursor: pointer;
+
+
+    &:hover {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:active {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:focus {
+    background-image: none;
+    background-color: #414c63;
+    }
 
     @include phones() {
         flex-direction: row;

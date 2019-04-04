@@ -124,6 +124,21 @@
 .works__link {
     color: #383bcf;
     font-weight: 600;
+
+    &:hover {
+        font-weight: 700;
+        color: #414c63;
+    }
+
+    &:active {
+    font-weight: 700;
+    color: #414c63;
+    }
+
+    &:focus {
+    font-weight: 700;
+    color: #414c63;
+    }
 }
 
 .works__btns {
@@ -138,6 +153,21 @@
     align-items: center;
     font-weight: 600;
     color: #a0a5b1;
+
+    &:hover {
+        color: #383bcf;
+        font-weight: 700;
+    }
+
+    &:active {
+    color: #383bcf;
+    font-weight: 700;
+    }
+
+    &:focus {
+    color: #383bcf;
+    font-weight: 700;
+    }
 }
 
 .btn-edit:after {
@@ -168,6 +198,21 @@
     align-items: center;
     justify-content: center;
     min-height: 35rem;
+
+    &:hover {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:active {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:focus {
+    background-image: none;
+    background-color: #414c63;
+    }
 
 
 
@@ -225,6 +270,7 @@
 .works__content-item_edit-card {
     width: 100%;
 
+
     @include tablets() {
     display: flex;
     flex-direction: column;
@@ -277,6 +323,7 @@
 }
 
 .works__content-item_edit-card-mobile {
+    @include desktopHd(),
     @include desktop() {
         display: none;
     }
