@@ -102,6 +102,10 @@ new Vue({
                     this.currentIndex--;
                     break;
             }
+        },
+
+        handleThumbClick(index){
+            this.currentIndex = index;
         }
     },
    
