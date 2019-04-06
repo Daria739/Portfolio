@@ -528,7 +528,6 @@ export default {
 @import "normalize.css";
 @import "../styles/mixins.pcss";
 @import "../styles/layout/base.pcss";
-@import "../styles/admin/login.pcss";
 @import "../styles/admin/header.pcss";
 @import "../styles/admin/nav.pcss";
 @import "../styles/admin/main-content.pcss";
@@ -580,6 +579,34 @@ export default {
     visibility: visible;
   }
 }
+
+.login {
+background-image: linear-gradient(rgba(#2d3c4e, 0.9), rgba(#2d3c4e, 0.9)), url("~images/content/Mountain-Baloon.jpg");
+background-position: 100%, 40%;
+background-size: cover, cover;
+display: flex;
+align-items: center;
+justify-content: center;
+height: 100vh;
+position: relative;
+
+
+    @include phones() {
+        background-image: none;
+    }
+}
+
+.login__form {
+min-width: 563px;
+padding: 50px 77px 60px;
+background: #fff;
+position: relative;
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+}
+
 button {
   background: transparent;
 }
@@ -670,6 +697,16 @@ button {
     flex-direction: column;
     justify-content: center;
   }
+}
+
+.login__row {
+    margin-bottom: 5%;
+}
+
+.login__form-title {
+    font-size: 36px;
+    font-weight: 600;
+    margin-bottom: 30px;
 }
 
 .login__btn-close {
