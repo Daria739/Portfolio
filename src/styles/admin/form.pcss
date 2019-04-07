@@ -1,0 +1,284 @@
+form {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.form__main-content {
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 5%;
+    padding-bottom: 5%;
+
+    &_works {
+        @include tablets(){
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        }
+    }
+}
+
+.form__col_left {
+    display: flex;
+    flex-direction: column;
+    margin-right: 5%;
+}
+
+.form__col_right {
+    width: 70%;
+    
+    @include tablets(){
+        margin-right: 0;
+        margin-top: 5%;
+    }
+
+    @include phones() {
+        width: 100%;
+    }
+}
+
+.form__user-photo {
+    width: 200px;
+    height: 200px;
+    background-color: #dee4ed;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5%;
+
+    &:after {
+        content: "";
+        display: block;
+        background: svg-load("user.svg", fill=#fff, width=100%,height=100%)center center no-repeat;
+        width: 90px;
+        height: 120px;
+    }
+}
+
+.form__user-add-photo {
+    font-weight: 600;
+    font-size: 16px;
+    color: #383bcf;
+
+    &:hover {
+        font-weight: 700;
+        color: #414c63;
+    }
+
+    &:active {
+    font-weight: 700;
+    color: #414c63;
+    }
+
+    &:focus {
+    font-weight: 700;
+    color: #414c63;
+    }
+}
+
+.form__block {
+    display: flex;
+    flex-direction: column;
+    border-bottom: 1px solid #414c63;
+    flex: 1;
+    margin-right: 50px;
+
+    transition-duration: .2s;
+
+    &:last-child {
+        margin-right: 0;
+    }
+
+    @include phones(){
+    margin-right: 0;
+    margin-bottom: 5%;
+    }
+
+}
+
+.form__row {
+    display: flex;
+    margin-bottom: 3%;
+}
+
+.form__input {
+    border: none;
+    background: transparent;
+    padding: 10px 10px;
+    padding-left: 0;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+
+    &:hover {
+    color: #5500f2;
+    }
+
+    &:active {
+    color:  #ae00ff;
+    }
+
+    &:focus {
+    color: #414c63;
+    }
+    
+
+}
+
+.form__input_textarea {
+    border: 1px solid #dee4ed;
+}
+
+.form__block_textarea {
+    border-bottom: none;
+}
+
+.form__input_textarea {
+    line-height: 3rem;
+    width: 100%;
+    align-items: flex-start;
+    padding-top: 0;
+    overflow: hidden;
+    resize: vertical;
+    padding: 10px;
+}
+
+.form__block-title {
+    font-size: 16px;
+    color: #414c63;
+    opacity: .5;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.form__block-title_textarea {
+    margin-bottom: 10px;
+}
+
+.form__btns {
+    display: flex;
+    justify-content: flex-end;
+
+    @include tablets(){
+        justify-content: center;
+    }
+
+    @include phones() {
+        margin-bottom: 8%;
+    }
+}
+
+.form__btn-cancel {
+    font-weight: 600;
+    color: #383bcf;
+    margin-right: 4%;
+
+    &:hover {
+        font-weight: 700;
+        color: #414c63;
+    }
+
+    &:active {
+    font-weight: 700;
+    color: #414c63;
+    }
+
+    &:focus {
+    font-weight: 700;
+    color: #414c63;
+    }
+}
+
+.form__btn-save {
+    max-width: 183px;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    padding: 16px 20px;
+    color: #fff;
+    border-radius: 25px;
+    text-transform: uppercase;
+    font-weight: 700;
+
+    &:hover {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:active {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:focus {
+    background-image: none;
+    background-color: #414c63;
+    }
+}
+
+.form__add-photo {
+    width: 500px;
+    height: 280px;
+    background-color: #dee4ed;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-left: 5%;
+    border: 1px dashed #414c63;
+    font-weight: 600;
+    color: #8f98a8;
+}
+
+.form__add-photo-btn {
+    width: 180px;
+    height: 50px;
+    text-transform: uppercase;
+    color: #fff;
+    font-weight: 700;
+    background-image: linear-gradient(to right, #006aed, #3f35cb);
+    padding: 16px 20px;
+    border-radius: 25px;
+    margin-top: 3%;
+
+    &:hover {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:active {
+    background-image: none;
+    background-color: #5500f2;
+    }
+
+    &:focus {
+    background-image: none;
+    background-color: #414c63;
+    }
+}
+
+.form__input_works {
+    width: 100%;
+}
+
+.form__main-content_reviews {
+    @include phones() {
+        flex-direction: column;
+    }
+}
+
+.form__col_left-reviews {
+    @include phones() {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        margin-right: 0;
+    }
+}
+
+.form__row-reviews {
+    @include phones() {
+        display: flex;
+        flex-direction: column;
+    }
+}
